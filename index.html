@@ -242,10 +242,12 @@ h2.sec{font-family:var(--font-display); font-weight:680; line-height:1.04; lette
 .scroll-cue{position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:2;
   font-family:var(--font-mono); font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--faint);
   display:flex; flex-direction:column; align-items:center; gap:9px}
-.scroll-cue .mouse{width:22px;height:34px;border:1.5px solid var(--faint);border-radius:12px;position:relative}
-.scroll-cue .mouse::after{content:"";position:absolute;top:6px;left:50%;width:3px;height:6px;border-radius:3px;
-  background:var(--accent);transform:translateX(-50%);animation:wheel 1.8s infinite}
-@keyframes wheel{0%{opacity:0;top:6px}40%{opacity:1}100%{opacity:0;top:16px}}
+.scroll-cue .cue-line{width:1px;height:46px;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,rgba(100,119,143,0),rgba(100,119,143,.38))}
+.scroll-cue .cue-line::after{content:"";position:absolute;left:0;top:-45%;width:100%;height:45%;
+  background:linear-gradient(180deg,transparent,var(--accent) 55%,var(--accent-2));
+  animation:cueDrop 2.3s cubic-bezier(.55,0,.45,1) infinite}
+@keyframes cueDrop{0%{top:-45%;opacity:0}14%{opacity:1}72%,100%{top:100%;opacity:1}}
 
 /* ============================================================
    PRACTICE (about) + AT A GLANCE
@@ -354,6 +356,7 @@ h2.sec{font-family:var(--font-display); font-weight:680; line-height:1.04; lette
 /* ---- mobile / small-screen tuning ---- */
 @media(max-width:540px){
   .hero{padding-top:92px; padding-bottom:44px; min-height:auto}
+  .scroll-cue{display:none} /* hero is auto-height here — the cue would sit on top of content */
   .hero-name{font-size:clamp(30px,9vw,46px); overflow-wrap:anywhere}
   .hero-sub{max-width:none}
   section{padding-block:clamp(54px,9vh,92px)}
@@ -562,12 +565,12 @@ main:focus{outline:none}
 
 <!-- SECTION PROGRESS RAIL ------------------------------------------ -->
 <nav class="rail" id="rail" aria-label="Section progress">
-  <a href="#top" data-rail="Top" aria-label="Top"><i></i></a>
-  <a href="#practice" data-rail="Practice" aria-label="Practice"><i></i></a>
-  <a href="#services" data-rail="Services" aria-label="Services"><i></i></a>
-  <a href="#method" data-rail="Method" aria-label="Method"><i></i></a>
-  <a href="#track" data-rail="Track record" aria-label="Track record"><i></i></a>
-  <a href="#contact" data-rail="Contact" aria-label="Contact"><i></i></a>
+  <a href="#top" data-rail="Top" data-i18n-rail="railTop" aria-label="Top"><i></i></a>
+  <a href="#practice" data-rail="Practice" data-i18n-rail="navPractice" aria-label="Practice"><i></i></a>
+  <a href="#services" data-rail="Services" data-i18n-rail="navServices" aria-label="Services"><i></i></a>
+  <a href="#method" data-rail="Method" data-i18n-rail="navMethod" aria-label="Method"><i></i></a>
+  <a href="#track" data-rail="Track record" data-i18n-rail="navTrack" aria-label="Track record"><i></i></a>
+  <a href="#contact" data-rail="Contact" data-i18n-rail="navContact" aria-label="Contact"><i></i></a>
 </nav>
 
 <!-- HERO ----------------------------------------------------------- -->
@@ -601,7 +604,7 @@ main:focus{outline:none}
         </p>
         <div class="hud-row">
           <span class="hud-k"><em class="hud-i">01</em><span data-i18n="hudA">Regulatory affairs</span></span>
-          <span class="hud-v"><b>RU / EAEU</b><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
+          <span class="hud-v"><b data-i18n="hudAv">RU / EAEU</b><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
         </div>
         <div class="hud-row">
           <span class="hud-k"><em class="hud-i">02</em><span data-i18n="hudB">Pharmacoeconomics · HTA</span></span>
@@ -627,7 +630,7 @@ main:focus{outline:none}
       </div>
     </div>
   </div>
-  <div class="scroll-cue"><div class="mouse"></div><span data-i18n="scroll">scroll</span></div>
+  <div class="scroll-cue" aria-hidden="true"><span data-i18n="scroll">scroll</span><span class="cue-line"></span></div>
 </header>
 
 <main id="main" tabindex="-1">
@@ -924,6 +927,7 @@ const TR = {
     skip: "Skip to content",
     brandName: "Eugene Mitrokhin", brandTag: "entrepreneur", footName: "Eugene Mitrokhin, entrepreneur",
     navPractice: "Practice", navServices: "Services", navMethod: "Method", navTrack: "Track record", navContact: "Contact",
+    railTop: "Top",
     heroStatus: "Independent practice · Moscow · since 2019",
     heroKicker: "Pharmaceuticals · Medical devices",
     heroName: "Market access, regulatory & documentation",
@@ -931,7 +935,7 @@ const TR = {
     heroSub: "An independent Moscow-based advisory helping pharmaceutical and medical-device companies with regulatory documentation, pharmacoeconomic evidence, market analytics and market entry across Russia and the EAEU — active since 2019.",
     ctaServices: "View services", ctaContact: "Contact",
     hudHead: "// focus areas",
-    hudA: "Regulatory affairs", hudB: "Pharmacoeconomics · HTA", hudBv: "CEA / BIA", hudC: "Market analytics", hudCv: "data-driven",
+    hudA: "Regulatory affairs", hudAv: "RU / EAEU", hudB: "Pharmacoeconomics · HTA", hudBv: "CEA / BIA", hudC: "Market analytics", hudCv: "data-driven",
     hudD: "Documentation · RU ↔ EN", hudDv: "audit-ready", hudE: "Public affairs", hudEv: "compliant",
     hudF: "Finance · software", hudFv: "second track",
     hudFoot: "6 focus areas · RU / EAEU · since 2019",
@@ -992,72 +996,73 @@ const TR = {
   },
   ru: {
     _title: "ИП Митрохин Е.М. — Market access, регуляторика и документация · РФ / ЕАЭС",
-    _desc: "Независимая московская практика для фарм- и медтех-компаний: регуляторное сопровождение, фармакоэкономика и HTA, аналитика рынка и market access на территории РФ / ЕАЭС — плюс финансовое моделирование и консалтинг в разработке ПО. С 2019 года.",
-    skip: "Перейти к содержанию",
+    _desc: "Независимая московская практика для фарм- и медтех-компаний: регуляторное сопровождение, фармакоэкономика и HTA, аналитика рынка и market access в РФ / ЕАЭС, а также финансовое моделирование и консалтинг в разработке ПО. С 2019 года.",
+    skip: "Перейти к содержимому",
     brandName: "ИП Митрохин Е.М.", brandTag: "market access", footName: "ИП Митрохин Е.М.",
     navPractice: "Практика", navServices: "Услуги", navMethod: "Подход", navTrack: "Опыт", navContact: "Контакты",
+    railTop: "Наверх",
     heroStatus: "Независимая практика · Москва · с 2019",
     heroKicker: "Лекарственные средства · Медизделия",
     heroName: "Market access, регуляторика и документация",
     heroRole: 'РФ / ЕАЭС — доказательная поддержка <span class="grad">life-sciences компаний.</span><span class="caret"></span>',
-    heroSub: "Независимая московская практика: помогаю фарм- и медтех-компаниям с регуляторной документацией, фармакоэкономическими данными, аналитикой рынка и выводом продукции на рынок РФ и ЕАЭС — с 2019 года.",
+    heroSub: "Независимая московская практика: помогаю фарм- и медтех-компаниям с регуляторной документацией, фармакоэкономическим обоснованием, аналитикой рынка и выводом продукции на рынок РФ и ЕАЭС — с 2019 года.",
     ctaServices: "Смотреть услуги", ctaContact: "Контакты",
     hudHead: "// направления",
-    hudA: "Регуляторика", hudB: "Фармакоэкономика · HTA", hudBv: "CEA / BIA", hudC: "Аналитика рынка", hudCv: "на данных",
-    hudD: "Документация · RU ↔ EN", hudDv: "под аудит", hudE: "GR / public affairs", hudEv: "комплаенс",
-    hudF: "Финансы · разработка ПО", hudFv: "второй трек",
+    hudA: "Регуляторика", hudAv: "РФ / ЕАЭС", hudB: "Фармакоэкономика · HTA", hudBv: "CEA / BIA", hudC: "Аналитика рынка", hudCv: "на основе данных",
+    hudD: "Документация · RU ↔ EN", hudDv: "готова к аудиту", hudE: "GR / public affairs", hudEv: "комплаенс",
+    hudF: "Финансы · ПО", hudFv: "второе направление",
     hudFoot: "6 направлений · РФ / ЕАЭС · с 2019",
     scroll: "листайте",
-    stat1: "Практикую с", stat2: "Линий услуг", stat3: "Трека работы", stat4: "Рабочих языка",
+    stat1: "Практикую с", stat2: "Видов услуг", stat3: "Направления работы", stat4: "Рабочие языки",
     ebPractice: "Практика",
     practiceH: 'Независимое сопровождение <span class="grad">market access в life-sciences.</span>',
-    practiceP1: "Независимая консалтинговая практика в Москве, работает <strong>с 2019 года</strong>. Поддержка фарм- и медтех-компаний по вопросам <strong>коммерческой стратегии, регуляторной документации, фармакоэкономических данных</strong> и <strong>market access</strong> на территории РФ и ЕАЭС.",
-    practiceP2: "Каждая рекомендация опирается на данные, с которыми может работать плательщик или регулятор — с доступом к <strong>международным исследовательским каналам</strong> (в т.ч. Сингапур / АСЕАН), когда задача выходит за пределы региона.",
+    practiceP1: "Независимая консалтинговая практика в Москве — работает <strong>с 2019 года</strong>. Помогаю фарм- и медтех-компаниям с <strong>коммерческой стратегией, регуляторной документацией, фармакоэкономическим обоснованием</strong> и <strong>market access</strong> в РФ и ЕАЭС.",
+    practiceP2: "Каждая рекомендация сформулирована на языке доказательств, понятном плательщику и регулятору. Когда задача выходит за пределы региона, подключаются <strong>международные исследовательские каналы</strong> (в т.ч. Сингапур / АСЕАН).",
     ebGlance: "Коротко",
-    glA: "Направление", glAv: "Фарма и медизделия · финансы и ИТ-консалтинг",
+    glA: "Профиль", glAv: "Фарма и медизделия · финансы и ИТ-консалтинг",
     glB: "География", glBv: "РФ / ЕАЭС · международные каналы",
     glC: "Работает с", glCv: "2019 · независимая практика",
-    glD: "База", glDv: "Москва, Российская Федерация",
+    glD: "Локация", glDv: "Москва, Российская Федерация",
     glE: "Статус", glEv: "ИП · ОГРНИП 319774600252261",
     ebServices: "Услуги",
-    servicesH: "Как мы сопровождаем market access.",
-    servicesLede: "Сфокусированный набор услуг для выхода и работы на фармрынке РФ и ЕАЭС. Точный состав и результаты согласуются с каждым заказчиком.",
-    s1h: "Регуляторика и market access — фарма", s1p: "Пути регистрации в РФ / ЕАЭС, включение в перечни возмещения (ЖНВЛП) и требования к локализации для лекарственных препаратов.",
+    servicesH: "Как устроено сопровождение market access.",
+    servicesLede: "Компактный набор услуг для выхода на фармрынок РФ и ЕАЭС и работы на нём. Состав работ и результаты согласуются с каждым заказчиком.",
+    s1h: "Регуляторика и market access — фарма", s1p: "Пути регистрации в РФ / ЕАЭС, включение в перечень ЖНВЛП и требования локализации для лекарственных препаратов.",
     s2h: "Регистрация и соответствие медизделий", s2p: "Пути регистрации медизделий (Росздравнадзор, ЕАЭС) — технические файлы, оценка соответствия, документация пострегистрационного надзора.",
-    s3h: "Фармакоэкономика и HTA", s3p: "Анализ «затраты–эффективность» и влияния на бюджет, value-досье и доказательные пакеты для решений о возмещении и включении в формуляры.",
-    s4h: "Регуляторная документация и перевод", s4p: "Сопровождение досье (в т.ч. в структуре eCTD) и технический / медицинский перевод RU ↔ EN, подготовка документов.",
+    s3h: "Фармакоэкономика и HTA", s3p: "Анализ «затраты — эффективность» и влияния на бюджет, value-досье и пакеты доказательств для решений о возмещении и включении в формуляры.",
+    s4h: "Регуляторная документация и перевод", s4p: "Сопровождение досье (в т.ч. в структуре eCTD), технический и медицинский перевод RU ↔ EN, подготовка документов.",
     s5h: "Поддержка на рынке РФ", s5p: "Поиск поставщиков и CMO, локализация контрактного производства, актуализация документации под действующие требования РФ / ЕАЭС.",
-    s6h: "Исследования рынка и фин. моделирование", s6p: "Оценка объёма рынка, прогнозирование, ценовые сценарии и готовые к решению бизнес-кейсы — сегментный анализ фармрынка.",
-    s7h: "GR и взаимодействие со стейкхолдерами", s7p: "Комплаентное взаимодействие с отраслевыми ассоциациями и регуляторами; международные исследовательские каналы (в т.ч. Сингапур) по запросу.",
+    s6h: "Исследования рынка и финансовое моделирование", s6p: "Оценка объёма рынка, прогнозы, ценовые сценарии и бизнес-кейсы для принятия решений — сегментный анализ фармрынка.",
+    s7h: "GR и работа со стейкхолдерами", s7p: "Комплаентное взаимодействие с отраслевыми ассоциациями и регуляторами; международные исследовательские каналы (в т.ч. Сингапур) — по запросу.",
     diffBadge: "Отличительная компетенция",
     diffH: "Цифровая аналитика на стыке ИТ и здравоохранения",
-    diffP: "Интерактивные дашборды и автоматизированные конвейеры сбора и обработки данных — тендеры / ЕИС, таможенная статистика, открытые регистры — и прогнозные модели доступа и спроса. При необходимости — с привлечением международных исследовательских каналов (вкл. Сингапур / АСЕАН).",
+    diffP: "Интерактивные дашборды, автоматизированный сбор и обработка данных — тендеры / ЕИС, таможенная статистика, открытые реестры — и прогнозные модели доступа и спроса. При необходимости подключаются международные исследовательские каналы (в т.ч. Сингапур / АСЕАН).",
     ebAlso: "Второе направление",
     alsoH: "Тот же инструментарий — за пределами life sciences.",
-    alsoLede: "Фармацевтический market access — главная работа практики, и она опирается на более широкую базу: финансовое моделирование, разработка ПО и инженерия данных для заказчиков из разных отраслей.",
-    s8h: "Финансовое моделирование и анализ", s8p: "Модели для инвестиционных программ и венчурных портфелей, ценообразование и юнит-экономика — готовые к решению бизнес-кейсы, автоматизация Excel/VBA, дашборды.",
-    s9h: "Консалтинг в разработке ПО и приложений", s9p: "Полный цикл ИТ-поставки — от идеи и бэклога до продакшена: продуктовый и проектный менеджмент, Agile в масштабе, пресейл и быстрое прототипирование.",
-    s10h: "Данные и аналитическая инженерия", s10p: "Автоматизированные конвейеры данных, интерактивные дашборды и прогнозные модели — общая техническая нить обоих направлений практики.",
+    alsoLede: "Фармацевтический market access — главная специализация практики, но под ней более широкая база: финансовое моделирование, разработка ПО и инженерия данных для заказчиков из разных отраслей.",
+    s8h: "Финансовое моделирование и анализ", s8p: "Модели для инвестиционных программ и венчурных портфелей, ценообразование и юнит-экономика — бизнес-кейсы для принятия решений, автоматизация Excel/VBA, дашборды.",
+    s9h: "Консалтинг в разработке ПО и приложений", s9p: "Полный цикл разработки — от идеи и бэклога до продакшена: продуктовый и проектный менеджмент, масштабирование Agile, пресейл и быстрое прототипирование.",
+    s10h: "Инженерия данных и аналитика", s10p: "Автоматизированные пайплайны данных, интерактивные дашборды и прогнозные модели — техническая основа обоих направлений практики.",
     ebMethod: "Подход",
     methodH: 'Каждая рекомендация опирается на <span class="grad">данные.</span>',
-    methodLede: "Три принципа проходят через всю работу — от первой выгрузки данных до финального досье.",
-    m1h: "Доказательства и фармакоэкономика", m1p: "Данные рынка, прогнозирование, моделирование «затраты–эффективность» и влияния на бюджет — бизнес-кейсы в цифрах, с которыми может работать плательщик.",
-    m2h: "Регуляторика и документация", m2p: "Точные, готовые к аудиту досье для препаратов и технические файлы для медизделий — с переводом и локализацией под требования РФ / ЕАЭС.",
-    m3h: "Доступ и взаимодействие", m3p: "Комплаентное взаимодействие со стейкхолдерами через прозрачные, ассоциативные каналы — и международные исследования там, где это нужно задаче.",
-    orbitH: "Инструментарий за аналитикой.",
-    orbitP: "Живое созвездие регуляторных рамок, доказательных методов и источников данных, между которыми движется практика — словарь market access в движении.",
+    methodLede: "Вся работа строится на трёх принципах — от первой выгрузки данных до финального досье.",
+    m1h: "Доказательства и фармакоэкономика", m1p: "Данные рынка, прогнозирование, анализ «затраты — эффективность» и влияния на бюджет — аргументы в цифрах, понятных плательщику.",
+    m2h: "Регуляторика и документация", m2p: "Точные, готовые к аудиту досье на препараты и технические файлы на медизделия — с переводом и локализацией под требования РФ / ЕАЭС.",
+    m3h: "Доступ и взаимодействие", m3p: "Комплаентная работа со стейкхолдерами — прозрачно, через отраслевые ассоциации; международные исследования — там, где они нужны задаче.",
+    orbitH: "Что стоит за аналитикой.",
+    orbitP: "Живая карта регуляторных требований, доказательных методов и источников данных, с которыми работает практика, — словарь market access в движении.",
     ebTrack: "Опыт",
-    trackH: "Реализовано в России, связи по миру.",
-    trackLede: "Показательные проекты: регуляторная документация, поиск партнёров, аналитика и международные исследования.",
+    trackH: "Проекты в России, связи по всему миру.",
+    trackLede: "Характерные проекты: регуляторная документация, поиск партнёров, аналитика и международные исследования.",
     tr1ph: "регуляторика", tr1h: "Локализация и сопровождение досье", tr1p: "Консультировал российских фармпроизводителей по регистрационным досье, локализации контрактного производства и обновлению документации под действующие требования РФ / ЕАЭС.",
     tr2ph: "рынок", tr2h: "Поиск партнёров и поддержка на рынке", tr2p: "Поиск поставщиков и партнёров в фармпроизводстве, поддержка заказчиков в обновлении документации и прохождении процедур ЕАЭС.",
     tr3ph: "исследования", tr3h: "Координация контрактных исследований", tr3p: "Координация контрактных исследований с международными партнёрами в Юго-Восточной Азии, включая взаимодействие с национальным исследовательским агентством и национальной инновационной программой.",
-    tr4ph: "моделирование", tr4h: "Аналитика и прогнозирование рынка", tr4p: "Оценка сегментов и сценарии спроса на фармрынке на базе автоматизированных конвейеров данных (тендеры / ЕИС, таможенная статистика, регистры) и интерактивных дашбордов.",
-    ebContact: "Свяжитесь",
+    tr4ph: "моделирование", tr4h: "Аналитика и прогнозирование рынка", tr4p: "Оценка сегментов и сценарии спроса на фармрынке — на основе автоматизированных пайплайнов данных (тендеры / ЕИС, таможенная статистика, реестры) и интерактивных дашбордов.",
+    ebContact: "На связи",
     contactH: 'Обсудим ваши <span class="grad">задачи market access.</span>',
-    contactP: "Регистрация, досье, HTA-доказательства, аналитика рынка или документация, которая должна выдержать проверку — со мной легко связаться.",
+    contactP: "Регистрация, досье, доказательная база для HTA, аналитика рынка или документация, которая должна выдержать проверку, — напишите, я на связи.",
     ctaCopy: "Скопировать e-mail", ctaWrite: "Написать письмо",
-    idName: "Субъект", idLoc: "Локация", idLocv: "Москва, РФ",
+    idName: "Наименование", idLoc: "Локация", idLocv: "Москва, РФ",
     footTag: "Market access · РФ / ЕАЭС",
     footLegal: "ОГРНИП 319774600252261 · ИНН 773433517310 · Москва",
     copied: "Скопировано", copyfail: "Не удалось скопировать — "
@@ -1073,6 +1078,10 @@ function applyLang(lang){
   });
   document.querySelectorAll('[data-i18n-html]').forEach(el=>{
     const k = el.getAttribute('data-i18n-html'); if(dict[k] != null) el.innerHTML = dict[k];
+  });
+  document.querySelectorAll('[data-i18n-rail]').forEach(el=>{
+    const k = el.getAttribute('data-i18n-rail');
+    if(dict[k] != null){ el.setAttribute('data-rail', dict[k]); el.setAttribute('aria-label', dict[k]); }
   });
   if(dict._title) document.title = dict._title;
   const md = document.querySelector('meta[name="description"]'); if(md && dict._desc) md.setAttribute('content', dict._desc);
