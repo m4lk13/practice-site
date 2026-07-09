@@ -1,0 +1,1300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ИП Митрохин Е.М. — Market Access, Regulatory &amp; Documentation · Russia / EAEU</title>
+<meta name="description" content="Independent Moscow-based advisory for pharmaceutical and medical-device companies: regulatory affairs, pharmacoeconomics & HTA, market analytics and market access across Russia / EAEU — backed by financial modelling and software-delivery consulting. Active since 2019.">
+<meta name="theme-color" content="#00040a">
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN.com/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23000000'/><path d='M10 10l6 6-6 6' fill='none' stroke='%234da3ff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/><path d='M18 22h5' stroke='%235be3c6' stroke-width='2.4' stroke-linecap='round'/></svg>">
+
+<!-- Social share — replace REPLACE-WITH-YOUR-DOMAIN.com and add og-card.png (1200x630) before publishing -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ИП Митрохин Е.М. — Consulting practice">
+<meta property="og:title" content="ИП Митрохин Е.М. — Market Access & Regulatory Affairs · Russia / EAEU">
+<meta property="og:description" content="Independent advisory for pharma & medical-device companies: regulatory documentation, pharmacoeconomics & HTA, market analytics and market access across Russia / EAEU.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN.com/">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ИП Митрохин Е.М. — Market Access & Regulatory Affairs">
+<meta name="twitter:description" content="Independent advisory for pharma & medical-device market access across Russia / EAEU. Moscow, since 2019.">
+<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN.com/og-card.png">
+
+<script type="application/ld+json">
+{ "@context":"https://schema.org", "@type":"ProfessionalService",
+  "name":"ИП Митрохин Е.М. — Consulting practice",
+  "description":"Independent advisory for pharmaceutical and medical-device companies: regulatory affairs, pharmacoeconomics & HTA, market analytics and market access across Russia / EAEU — backed by financial modelling and software-delivery consulting.",
+  "email":"evgeniy.mitrokhin@gmail.com",
+  "areaServed":["RU","EAEU"],
+  "founder":{"@type":"Person","name":"Evgeniy Mitrokhin"},
+  "foundingDate":"2019",
+  "address":{"@type":"PostalAddress","addressLocality":"Moscow","addressCountry":"RU"},
+  "knowsLanguage":["en","ru"],
+  "taxID":"773433517310",
+  "identifier":{"@type":"PropertyValue","propertyID":"ОГРНИП","value":"319774600252261"},
+  "url":"https://REPLACE-WITH-YOUR-DOMAIN.com/",
+  "knowsAbout":["Regulatory affairs","Market access","Pharmacoeconomics","HTA","Medical device registration","Pharmaceutical dossiers","EAEU","ЖНВЛП","Market analytics","Financial modelling","Software delivery","Data engineering"] }
+</script>
+<style>
+/* ============================================================
+   DESIGN TOKENS  —  dark glass · restrained neon (toned-down cyberpunk)
+   ============================================================ */
+:root{
+  color-scheme: dark;
+  --bg:        #00040a;
+  --bg-2:      #0a1018;
+  --fg:        #e4f0ff;
+  --muted:     #9db2cc;
+  --faint:     #64778f;
+
+  --glass:        rgba(77,163,255,.045);
+  --glass-2:      rgba(77,163,255,.07);
+  --glass-border: rgba(77,163,255,.18);
+  --glass-hi:     rgba(180,214,255,.32);
+
+  --accent:    #4da3ff;   /* clinical blue — primary */
+  --accent-2:  #5be3c6;   /* biotech teal — secondary */
+  --accent-3:  #eaf4ff;   /* near-white blue highlight (rare) */
+
+  --radius:    14px;
+  --radius-sm: 10px;
+  --maxw:      1180px;
+  --ease:      cubic-bezier(.2,.7,.2,1);
+
+  --shadow:    0 30px 80px -30px rgba(0,0,0,.92);
+  --glow:      0 0 0 1px var(--glass-border), 0 24px 60px -28px rgba(77,163,255,.42);
+
+  --font-display: "JetBrains Mono", "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, monospace;
+  --font-body:    "JetBrains Mono", "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, monospace;
+  --font-mono:    "JetBrains Mono", "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, monospace;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:var(--font-body);
+  font-size:clamp(15px,1.05vw,17px); line-height:1.65;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  text-shadow:0 1px 2px rgba(0,4,10,.5);
+  overflow-x:hidden;
+}
+body::selection,::selection{background:rgba(77,163,255,.28)}
+
+/* fixed atmospheric background (toned down) ----------------------- */
+.bg-fixed{position:fixed; inset:0; z-index:-4; background:
+  radial-gradient(1200px 800px at 78% -8%, rgba(70,200,190,.14), transparent 60%),
+  radial-gradient(1000px 700px at 8% 12%, rgba(77,163,255,.12), transparent 58%),
+  radial-gradient(900px 900px at 50% 120%, rgba(70,200,190,.09), transparent 60%),
+  linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 55%, var(--bg) 100%);}
+#gl{position:fixed; inset:0; width:100vw; height:100vh; z-index:-3; display:block; opacity:.30}
+.scrim{position:fixed; inset:0; z-index:-1; pointer-events:none; background:linear-gradient(180deg, rgba(2,5,10,.5), rgba(2,5,10,.38))}
+
+.grid-fixed{position:fixed; inset:0; z-index:-2; opacity:.42; pointer-events:none;
+  background-image:linear-gradient(rgba(77,163,255,.045) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(77,163,255,.045) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 35%,transparent 78%);
+          mask-image:radial-gradient(120% 90% at 50% 0%,#000 35%,transparent 78%);}
+.orb{position:fixed; border-radius:50%; filter:blur(70px); z-index:-2; opacity:.38; pointer-events:none; will-change:transform}
+.orb.a{width:46vw;height:46vw;left:-10vw;top:6vh;background:radial-gradient(circle,rgba(77,163,255,.5),transparent 65%)}
+.orb.b{width:40vw;height:40vw;right:-8vw;top:40vh;background:radial-gradient(circle,rgba(70,200,190,.42),transparent 65%)}
+
+.caret{display:inline-block; width:.6ch; height:1.02em; margin-left:.14em; vertical-align:-3px;
+  background:var(--accent); box-shadow:0 0 12px var(--accent); animation:blink 1.05s steps(1) infinite}
+@keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
+.eyebrow,.brand,h2.sec,.hero-role,.proj h3,.card h3,.cap h3,.now-item h3,.contact h2{text-shadow:0 1px 2px rgba(0,4,10,.95), 0 2px 6px rgba(0,4,10,.6), 0 0 16px rgba(77,163,255,.14)}
+.lede,.hero-sub,.about-copy p{text-shadow:0 1px 3px rgba(0,4,10,.85)}
+@keyframes chroma{
+  0%,100%{text-shadow:0 2px 4px rgba(0,4,10,.9), 0 0 34px rgba(77,163,255,.14)}
+  45%{text-shadow:0 2px 4px rgba(0,4,10,.9), 0 0 46px rgba(77,163,255,.28)}
+}
+
+/* scroll progress + cursor glow ---------------------------------- */
+.progress{position:fixed; top:0; left:0; height:2px; width:0;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2)); z-index:60;
+  box-shadow:0 0 12px rgba(77,163,255,.8)}
+.spot{position:fixed; width:520px; height:520px; border-radius:50%; z-index:-1; pointer-events:none;
+  background:radial-gradient(circle,rgba(77,163,255,.08),transparent 60%);
+  transform:translate(-50%,-50%); transition:opacity .4s; mix-blend-mode:screen}
+
+/* ============================================================
+   LAYOUT PRIMITIVES
+   ============================================================ */
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(20px,5vw,40px)}
+section{position:relative; padding-block:clamp(72px,11vh,140px)}
+.eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:.32em; text-transform:uppercase;
+  color:var(--accent); display:inline-flex; align-items:center; gap:10px; margin:0 0 18px}
+.eyebrow::before{content:""; width:26px; height:1px; background:linear-gradient(90deg,var(--accent),transparent)}
+h2.sec{font-family:var(--font-display); font-weight:680; line-height:1.04; letter-spacing:-.022em;
+  font-size:clamp(30px,4.4vw,56px); margin:0 0 .5em; text-wrap:balance}
+.lede{color:var(--muted); font-size:clamp(16px,1.5vw,20px); max-width:64ch; text-wrap:pretty}
+.grad{background:linear-gradient(105deg,var(--accent) 0%,#5be3c6 38%,var(--accent-2) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow:0 1px 3px rgba(0,4,12,.55)}
+
+/* glass card ----------------------------------------------------- */
+.glass{background:linear-gradient(rgba(5,10,18,.62),rgba(5,10,18,.62)), var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius);
+  -webkit-backdrop-filter:blur(16px) saturate(140%); backdrop-filter:blur(16px) saturate(140%);
+  box-shadow:var(--shadow); position:relative; overflow:hidden}
+.glass::before{content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),transparent 32%)}
+
+/* reveal on scroll ----------------------------------------------- */
+.reveal{opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
+.reveal.in{opacity:1; transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+.reveal[data-d="5"]{transition-delay:.40s}.reveal[data-d="6"]{transition-delay:.48s}
+.reveal[data-d="7"]{transition-delay:.56s}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{position:fixed; top:0; inset-inline:0; z-index:50; transition:.4s var(--ease)}
+.nav-inner{max-width:var(--maxw); margin-inline:auto; margin-block:14px; padding:11px 16px 11px 22px;
+  display:flex; align-items:center; gap:18px; border-radius:16px;
+  border:1px solid transparent; transition:.4s var(--ease)}
+.nav.scrolled .nav-inner{background:rgba(5,10,16,.62); border-color:var(--glass-border);
+  -webkit-backdrop-filter:blur(18px) saturate(150%); backdrop-filter:blur(18px) saturate(150%);
+  box-shadow:0 16px 40px -22px rgba(0,0,0,.8)}
+.brand{font-family:var(--font-mono); font-size:13.5px; letter-spacing:.04em; color:var(--fg);
+  text-decoration:none; display:flex; align-items:center; gap:9px; font-weight:600}
+.brand b{width:9px;height:9px;border-radius:3px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  box-shadow:0 0 14px rgba(77,163,255,.9); display:inline-block}
+.nav-links{margin-left:auto; display:flex; gap:4px; align-items:center}
+.nav-links a{color:var(--muted); text-decoration:none; font-size:13.5px; padding:8px 14px; border-radius:10px;
+  transition:.25s; letter-spacing:.01em}
+.nav-links a:hover{color:var(--fg); background:var(--glass-2)}
+.nav-cta{color:var(--bg)!important; background:linear-gradient(135deg,var(--accent),#5be3c6);
+  font-weight:600; box-shadow:0 8px 24px -8px rgba(77,163,255,.6)}
+
+/* language toggle */
+.lang{display:inline-flex; align-items:center; gap:2px; margin-left:6px; padding:4px;
+  border:1px solid var(--glass-border); border-radius:10px; background:var(--glass);
+  font-family:var(--font-mono)}
+.lang button{font-family:inherit; font-size:12px; letter-spacing:.06em; color:var(--muted);
+  background:none; border:0; padding:5px 9px; border-radius:7px; cursor:pointer; transition:.22s}
+.lang button:hover{color:var(--fg)}
+.lang button[aria-pressed="true"]{color:#041226; background:linear-gradient(135deg,var(--accent),#5be3c6); font-weight:700}
+
+@media(max-width:820px){
+  .nav-links a:not(.nav-cta){display:none}
+}
+@media(max-width:460px){
+  .nav-cta{display:none}
+  .brand{font-size:12px}
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative; min-height:100svh; display:flex; align-items:center; padding-top:120px; padding-bottom:60px; overflow:hidden}
+#net{position:absolute; inset:0; width:100%; height:100%; z-index:0; opacity:.45}
+.hero .wrap{position:relative; z-index:2}
+.hero .wrap::before{content:""; position:absolute; inset:-8% -6%; z-index:-1; pointer-events:none;
+  background:radial-gradient(62% 72% at 34% 50%, rgba(2,5,10,.72), rgba(2,5,10,0) 76%)}
+.hero-grid{display:grid; grid-template-columns:1.45fr .9fr; gap:48px; align-items:center}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr; gap:34px}}
+
+.status{display:inline-flex; align-items:center; gap:10px; font-family:var(--font-mono);
+  font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);
+  padding:7px 14px; border-radius:999px; border:1px solid var(--glass-border); background:var(--glass); margin-bottom:24px}
+.status i{width:8px;height:8px;border-radius:50%;background:#4da3ff;box-shadow:0 0 0 0 rgba(77,163,255,.6);
+  animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(77,163,255,.55)}70%{box-shadow:0 0 0 9px rgba(77,163,255,0)}100%{box-shadow:0 0 0 0 rgba(77,163,255,0)}}
+
+.hero-kicker{font-family:var(--font-mono); font-size:12.5px; letter-spacing:.26em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 14px}
+.hero-name{font-family:var(--font-display); font-weight:720; letter-spacing:-.03em; line-height:.98;
+  font-size:clamp(38px,6.4vw,80px); margin:0 0 16px; position:relative; display:inline-block;
+  background:linear-gradient(100deg,#e4f0ff 0%,var(--accent) 55%,var(--accent-2) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow:0 0 50px rgba(77,163,255,.16); animation:chroma 7s ease-in-out infinite}
+.hero-role{font-size:clamp(18px,2.1vw,25px); font-weight:560; line-height:1.34; max-width:26ch; margin:0 0 18px;
+  letter-spacing:-.01em}
+.hero-sub{color:var(--muted); max-width:52ch; margin:0 0 32px; text-wrap:pretty}
+.cta-row{display:flex; gap:14px; flex-wrap:wrap}
+.btn{font-family:var(--font-body); font-size:15px; font-weight:600; text-decoration:none; cursor:pointer;
+  padding:15px 26px; border-radius:14px; border:1px solid var(--glass-border); color:var(--fg);
+  background:var(--glass-2); transition:.3s var(--ease); display:inline-flex; align-items:center; gap:10px;
+  -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px)}
+.btn:hover{transform:translateY(-3px); border-color:var(--glass-hi); box-shadow:0 16px 36px -16px rgba(77,163,255,.5)}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#5be3c6); color:#041226; border-color:transparent;
+  box-shadow:0 12px 30px -10px rgba(77,163,255,.6)}
+.btn svg{width:17px;height:17px}
+
+/* hero side: floating glass HUD ---------------------------------- */
+.hud{padding:24px; transform-style:preserve-3d; will-change:transform}
+.hud .hud-h{font-family:var(--font-mono); font-size:11px; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--faint); margin:0 0 18px}
+.hud-row{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:13px 0;
+  border-bottom:1px solid rgba(77,163,255,.08); font-size:14px}
+.hud-row:last-child{border-bottom:0}
+.hud-row span{color:var(--muted)}
+.hud-row b{font-weight:600; font-family:var(--font-mono); font-size:13px; color:var(--accent)}
+.dot-line{display:inline-flex; gap:4px; align-items:center}
+.dot-line i{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+
+.scroll-cue{position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:2;
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--faint);
+  display:flex; flex-direction:column; align-items:center; gap:9px}
+.scroll-cue .mouse{width:22px;height:34px;border:1.5px solid var(--faint);border-radius:12px;position:relative}
+.scroll-cue .mouse::after{content:"";position:absolute;top:6px;left:50%;width:3px;height:6px;border-radius:3px;
+  background:var(--accent);transform:translateX(-50%);animation:wheel 1.8s infinite}
+@keyframes wheel{0%{opacity:0;top:6px}40%{opacity:1}100%{opacity:0;top:16px}}
+
+/* ============================================================
+   PRACTICE (about) + AT A GLANCE
+   ============================================================ */
+.about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:stretch}
+@media(max-width:880px){.about-grid{grid-template-columns:1fr}}
+.about-copy p{color:var(--muted); font-size:clamp(16px,1.5vw,19px); max-width:62ch; text-wrap:pretty}
+.about-copy strong{color:var(--fg); font-weight:600}
+.now-card{padding:30px; display:flex; flex-direction:column}
+.now-list{flex:1; display:flex; flex-direction:column; justify-content:space-between}
+.now-card .eyebrow{margin-bottom:14px}
+.now-item{display:flex; gap:15px; padding:15px 0; border-bottom:1px solid rgba(77,163,255,.08); align-items:flex-start}
+.now-item:last-child{border-bottom:0}
+.now-item .ic{flex:0 0 40px; height:40px; border-radius:11px; display:grid; place-items:center;
+  background:linear-gradient(135deg,rgba(77,163,255,.18),rgba(70,200,190,.14)); border:1px solid var(--glass-border)}
+.now-item .ic svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.7}
+.now-item h3{margin:0 0 3px; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); font-family:var(--font-mono)}
+.now-item p{margin:0; font-size:15px; color:var(--fg)}
+
+/* ============================================================
+   SERVICES (tilt cards)
+   ============================================================ */
+.cards{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:48px}
+@media(max-width:880px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.cards{grid-template-columns:1fr}}
+.tilt{transform-style:preserve-3d; transition:transform .25s var(--ease), box-shadow .35s; will-change:transform; cursor:default}
+.tilt:hover{box-shadow:var(--glow)}
+.card{padding:26px; min-height:200px; display:flex; flex-direction:column}
+.card .glare{position:absolute; inset:0; border-radius:inherit; pointer-events:none; opacity:0; transition:opacity .3s;
+  background:radial-gradient(220px circle at var(--mx,50%) var(--my,0%),rgba(180,214,255,.20),transparent 60%)}
+.tilt:hover .glare{opacity:1}
+.card .num{font-family:var(--font-mono); font-size:12px; color:var(--faint); letter-spacing:.1em; transform:translateZ(20px)}
+.card .ci{width:46px;height:46px;border-radius:13px;margin:14px 0 16px;display:grid;place-items:center;
+  background:linear-gradient(135deg,rgba(77,163,255,.16),rgba(70,200,190,.14)); border:1px solid var(--glass-border);
+  transform:translateZ(40px)}
+.card .ci svg{width:23px;height:23px;stroke:var(--accent);fill:none;stroke-width:1.6}
+.card h3{margin:0 0 6px; font-size:18px; font-weight:640; letter-spacing:-.01em; transform:translateZ(30px)}
+.card p{margin:0; color:var(--muted); font-size:14px; transform:translateZ(15px)}
+
+/* distinctive competence strip */
+.diff{margin-top:22px; padding:clamp(24px,3vw,34px); display:grid; grid-template-columns:auto 1fr; gap:24px; align-items:center}
+@media(max-width:640px){.diff{grid-template-columns:1fr; gap:16px}}
+.diff .badge{font-family:var(--font-mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--accent); writing-mode:vertical-rl; transform:rotate(180deg); justify-self:center}
+@media(max-width:640px){.diff .badge{writing-mode:horizontal-tb; transform:none; justify-self:start}}
+.diff h3{margin:0 0 8px; font-size:clamp(19px,2.4vw,26px); font-weight:660; letter-spacing:-.015em}
+.diff p{margin:0; color:var(--muted); font-size:15px; max-width:70ch; text-wrap:pretty}
+.diff .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:14px}
+
+/* ============================================================
+   METHOD + CONSTELLATION
+   ============================================================ */
+.method{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:46px}
+@media(max-width:880px){.method{grid-template-columns:1fr}}
+.mcard{padding:30px}
+.mcard .mn{font-family:var(--font-mono); font-size:12px; color:var(--accent); letter-spacing:.1em}
+.mcard h3{margin:14px 0 8px; font-size:19px; font-weight:640; letter-spacing:-.012em}
+.mcard p{margin:0; color:var(--muted); font-size:14.5px; text-wrap:pretty}
+
+.orbit-wrap{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; margin-top:56px}
+@media(max-width:880px){.orbit-wrap{grid-template-columns:1fr}}
+.scene{height:480px; position:relative; display:grid; place-items:center; overflow:visible}
+.scene::before{content:""; position:absolute; left:50%; top:50%; width:380px; height:380px; transform:translate(-50%,-50%);
+  border-radius:50%; background:radial-gradient(circle, rgba(77,163,255,.12), rgba(70,200,190,.05) 45%, transparent 70%);
+  filter:blur(18px); pointer-events:none; z-index:0}
+.orbit{position:relative; width:330px; height:330px; z-index:1}
+.orbit .core{position:absolute; top:50%; left:50%; width:128px; height:128px; transform:translate(-50%,-50%);
+  border-radius:50%; display:grid; place-items:center; z-index:50;
+  background:radial-gradient(circle at 38% 32%, rgba(225,240,255,.5), rgba(77,163,255,.26) 44%, rgba(70,200,190,.16) 66%, transparent 74%);
+  box-shadow:0 0 70px rgba(77,163,255,.44), 0 0 150px rgba(70,200,190,.26), inset 0 0 32px rgba(255,255,255,.22);
+  animation:corepulse 4.6s ease-in-out infinite}
+#coreCv{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; z-index:55}
+.orbit .core::before{content:""; position:absolute; inset:-44px; border-radius:50%; pointer-events:none; z-index:48;
+  background:repeating-conic-gradient(from 0deg, rgba(77,163,255,0) 0deg, rgba(77,163,255,.40) 2.2deg, rgba(77,163,255,0) 6.5deg, rgba(77,163,255,0) 15deg);
+  -webkit-mask:radial-gradient(circle, transparent 63%, #000 65%, #000 86%, transparent 88%);
+          mask:radial-gradient(circle, transparent 63%, #000 65%, #000 86%, transparent 88%);
+  animation:reactorspin 16s linear infinite}
+.orbit .core::after{content:""; position:absolute; inset:-56px; border-radius:50%; pointer-events:none; z-index:47;
+  border:1px solid rgba(77,163,255,.28);
+  box-shadow:0 0 0 5px rgba(77,163,255,.04), inset 0 0 26px rgba(77,163,255,.16)}
+@keyframes reactorspin{to{transform:rotate(360deg)}}
+@keyframes corepulse{0%,100%{box-shadow:0 0 70px rgba(77,163,255,.44),0 0 150px rgba(70,200,190,.24),inset 0 0 32px rgba(255,255,255,.2)}50%{box-shadow:0 0 95px rgba(77,163,255,.64),0 0 190px rgba(70,200,190,.36),inset 0 0 42px rgba(255,255,255,.3)}}
+.chip{position:absolute; top:50%; left:50%; font-family:var(--font-mono); font-size:12px; letter-spacing:.02em;
+  padding:7px 13px; border-radius:999px; border:1px solid rgba(77,163,255,.28); background:rgba(4,10,18,.82); color:var(--fg);
+  white-space:nowrap; pointer-events:none; will-change:transform,opacity;
+  box-shadow:0 6px 18px -8px rgba(0,0,0,.7), 0 0 12px -4px rgba(77,163,255,.4)}
+.orbit-cv{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; z-index:2}
+
+/* ============================================================
+   TRACK RECORD
+   ============================================================ */
+.work{display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:46px}
+@media(max-width:760px){.work{grid-template-columns:1fr}}
+.proj{padding:28px; display:flex; flex-direction:column; gap:14px; min-height:200px;
+  transition:transform .3s var(--ease), box-shadow .35s}
+.proj:hover{transform:translateY(-5px); box-shadow:var(--glow)}
+.proj .ph{font-family:var(--font-mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent);
+  display:flex; gap:10px; align-items:center}
+.proj .ph i{flex:1; height:1px; background:linear-gradient(90deg,var(--glass-border),transparent)}
+.proj h3{margin:0; font-size:20px; font-weight:640; letter-spacing:-.012em}
+.proj p{margin:0; color:var(--muted); font-size:14.5px; flex:1; text-wrap:pretty}
+.proj .meta{display:flex; gap:8px; flex-wrap:wrap}
+.pill{font-family:var(--font-mono); font-size:11px; padding:5px 11px; border-radius:8px;
+  border:1px solid var(--glass-border); background:var(--glass); color:var(--muted)}
+
+/* ---- mobile / small-screen tuning ---- */
+@media(max-width:540px){
+  .hero{padding-top:92px; padding-bottom:44px; min-height:auto}
+  .hero-name{font-size:clamp(30px,9vw,46px); overflow-wrap:anywhere}
+  .hero-sub{max-width:none}
+  section{padding-block:clamp(54px,9vh,92px)}
+  .cards{gap:14px} .work{gap:14px} .method{gap:14px}
+  .card{min-height:0} .now-card{padding:24px} .contact{padding:30px 22px}
+  .scene{height:340px; transform:scale(.74)}
+  .hud{padding:20px}
+  .btn{width:100%; justify-content:center}
+  .cta-row{width:100%}
+}
+
+/* ============================================================
+   CONTACT + IDENTITY
+   ============================================================ */
+.contact{padding:clamp(34px,5vw,64px); text-align:center; margin-bottom:26px}
+.contact h2{font-family:var(--font-display); font-weight:700; letter-spacing:-.025em;
+  font-size:clamp(30px,5vw,58px); margin:0 0 16px; line-height:1.04}
+.contact p{color:var(--muted); max-width:54ch; margin:0 auto 30px; font-size:clamp(16px,1.5vw,19px)}
+.contact .cta-row{justify-content:center}
+.copy-msg{min-height:1.3em; margin:16px 0 0; font-family:var(--font-mono); font-size:13px; letter-spacing:.02em;
+  color:var(--accent); opacity:0; transition:opacity .25s var(--ease)}
+.copy-msg.show{opacity:1}
+.identity{margin-top:34px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px}
+.idcell{font-family:var(--font-mono); font-size:12.5px; letter-spacing:.03em; color:var(--muted);
+  padding:9px 15px; border-radius:11px; border:1px solid var(--glass-border); background:var(--glass);
+  display:inline-flex; gap:8px; align-items:center}
+.idcell b{color:var(--faint); font-weight:600; text-transform:uppercase; font-size:10.5px; letter-spacing:.12em}
+.idcell span{color:var(--fg)}
+
+footer{text-align:center; padding:34px 20px 60px; color:var(--faint); font-family:var(--font-mono);
+  font-size:12px; letter-spacing:.06em; line-height:1.8}
+footer b{width:7px;height:7px;border-radius:2px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:inline-block; margin-right:7px; vertical-align:middle}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important; transition-duration:.001ms!important}
+  .reveal{opacity:1; transform:none}
+}
+
+/* ---- focus visibility (a11y) ---- */
+a, button, [tabindex]{outline:none}
+:is(a, button, .btn, .nav-links a, .brand, .lang button):focus-visible{
+  outline:2px solid var(--accent); outline-offset:3px; border-radius:8px;
+  box-shadow:0 0 0 4px rgba(77,163,255,.28)}
+main:focus{outline:none}
+.btn:active{transform:translateY(0) scale(.985)}
+.skip{position:fixed; top:10px; left:10px; z-index:300; transform:translateY(-180%);
+  background:var(--accent); color:#041226; font-family:var(--font-mono); font-weight:700;
+  font-size:13px; letter-spacing:.04em; padding:11px 18px; border-radius:10px; text-decoration:none;
+  box-shadow:0 8px 24px -8px rgba(77,163,255,.6); transition:transform .22s var(--ease)}
+.skip:focus{transform:translateY(0); outline:2px solid #041226; outline-offset:2px}
+
+/* directional-arrow micro-nudge on primary CTAs */
+.btn-primary svg{transition:transform .18s var(--ease)}
+.btn-primary:hover svg{transform:translateX(3px)}
+.print-only{display:none}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<!-- fixed background layers -->
+<div class="bg-fixed"></div>
+<canvas id="gl"></canvas>
+<div class="grid-fixed"></div>
+<div class="orb a" data-par=".4"></div>
+<div class="orb b" data-par=".7"></div>
+<div class="scrim"></div>
+<div class="spot" id="spot"></div>
+<div class="progress" id="progress"></div>
+
+<!-- NAV ------------------------------------------------------------ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><b></b>ИП&nbsp;МИТРОХИН&nbsp;Е.М.&nbsp;<span style="color:var(--muted)">//&nbsp;<span data-i18n="brandTag">market access</span></span></a>
+    <div class="nav-links">
+      <a href="#practice" data-i18n="navPractice">Practice</a>
+      <a href="#services" data-i18n="navServices">Services</a>
+      <a href="#method" data-i18n="navMethod">Method</a>
+      <a href="#track" data-i18n="navTrack">Track record</a>
+      <a class="nav-cta" href="#contact" data-i18n="navContact">Contact</a>
+      <span class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO ----------------------------------------------------------- -->
+<header class="hero" id="top">
+  <canvas id="net"></canvas>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="status"><i></i> <span data-i18n="heroStatus">Independent practice · Moscow · since 2019</span></span>
+        <p class="hero-kicker" data-i18n="heroKicker">Pharmaceuticals · Medical devices</p>
+        <h1 class="hero-name" data-i18n="heroName">Market access, regulatory &amp; documentation</h1>
+        <p class="hero-role" data-i18n-html="heroRole">Russia / EAEU — evidence-led support for <span class="grad">life-sciences companies.</span><span class="caret"></span></p>
+        <p class="hero-sub" data-i18n="heroSub">An independent Moscow-based advisory helping pharmaceutical and medical-device companies with regulatory documentation, pharmacoeconomic evidence, market analytics and market entry across Russia and the EAEU — active since 2019.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#services">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span data-i18n="ctaServices">View services</span>
+          </a>
+          <a class="btn" href="#contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+            <span data-i18n="ctaContact">Contact</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hud glass" id="hud">
+        <p class="hud-h" data-i18n="hudHead">// focus areas</p>
+        <div class="hud-row"><span data-i18n="hudA">Regulatory affairs</span><b>RU / EAEU</b></div>
+        <div class="hud-row"><span data-i18n="hudB">Pharmacoeconomics · HTA</span><span class="dot-line"><i></i><i></i><i></i></span></div>
+        <div class="hud-row"><span data-i18n="hudC">Market analytics</span><b data-i18n="hudCv">data-driven</b></div>
+        <div class="hud-row"><span data-i18n="hudD">Documentation · RU ↔ EN</span><b data-i18n="hudDv">audit-ready</b></div>
+        <div class="hud-row"><span data-i18n="hudE">Public affairs</span><b data-i18n="hudEv">compliant</b></div>
+        <div class="hud-row"><span data-i18n="hudF">Finance · software delivery</span><b data-i18n="hudFv">second track</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><div class="mouse"></div><span data-i18n="scroll">scroll</span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- PRACTICE ------------------------------------------------------- -->
+<section id="practice">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p class="eyebrow" data-i18n="ebPractice">The practice</p>
+        <h2 class="sec" data-i18n-html="practiceH">Independent advisory for <span class="grad">life-sciences market access.</span></h2>
+        <p data-i18n-html="practiceP1">A Moscow-based independent consulting practice, active <strong>since 2019</strong>, supporting pharmaceutical and medical-device companies on <strong>commercial strategy, regulatory documentation, pharmacoeconomic evidence</strong> and <strong>market access</strong> across Russia and the EAEU.</p>
+        <p data-i18n-html="practiceP2">Every recommendation is framed in evidence a payer or regulator can act on — with <strong>international research channels</strong> (including Singapore / ASEAN) available where a question reaches beyond the region.</p>
+      </div>
+
+      <div class="now-card glass reveal" data-d="2">
+        <p class="eyebrow" data-i18n="ebGlance">At a glance</p>
+        <div class="now-list">
+          <div class="now-item">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l3 3-3 3-3-3zM4 12l3 3-3 3-3-3zM20 12l3 3-3 3-3-3zM12 12l3 3-3 3-3-3z"/></svg></div>
+            <div><h3 data-i18n="glA">Scope</h3><p data-i18n="glAv">Pharmaceuticals &amp; medical devices</p></div>
+          </div>
+          <div class="now-item">
+            <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+            <div><h3 data-i18n="glB">Geography</h3><p data-i18n="glBv">Russia / EAEU · international channels</p></div>
+          </div>
+          <div class="now-item">
+            <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <div><h3 data-i18n="glC">Active since</h3><p data-i18n="glCv">2019 · independent practice</p></div>
+          </div>
+          <div class="now-item">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+            <div><h3 data-i18n="glD">Based in</h3><p data-i18n="glDv">Moscow, Russian Federation</p></div>
+          </div>
+          <div class="now-item">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 8h16M8 12h8M8 15h5"/></svg></div>
+            <div><h3 data-i18n="glE">Legal status</h3><p data-i18n="glEv">Sole proprietor (ИП) · ОГРНИП 319774600252261</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES ------------------------------------------------------- -->
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow reveal" data-i18n="ebServices">Services</p>
+    <h2 class="sec reveal" data-d="1" data-i18n="servicesH">How we support market access.</h2>
+    <p class="lede reveal" data-d="2" data-i18n="servicesLede">A focused set of services for entering and operating in the Russian and EAEU life-sciences market. Exact scope and deliverables are agreed with each client.</p>
+
+    <div class="cards">
+      <div class="tilt glass card reveal" data-d="1"><div class="glare"></div>
+        <span class="num">01</span>
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M9 3h6l1 3h4v14H4V6h4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3 data-i18n="s1h">Regulatory &amp; market-access advisory — pharma</h3><p data-i18n="s1p">RU / EAEU registration pathways, reimbursement listing (ЖНВЛП) and localisation requirements for pharmaceutical products.</p>
+      </div>
+      <div class="tilt glass card reveal" data-d="2"><div class="glare"></div>
+        <span class="num">02</span>
+        <div class="ci"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 7v6M9 10h6"/></svg></div>
+        <h3 data-i18n="s2h">Medical-device registration &amp; compliance</h3><p data-i18n="s2p">Roszdravnadzor and EAEU device pathways — technical files, conformity, and post-market vigilance documentation.</p>
+      </div>
+      <div class="tilt glass card reveal" data-d="3"><div class="glare"></div>
+        <span class="num">03</span>
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9M10 20V5M15 20v-8M20 20v-5"/></svg></div>
+        <h3 data-i18n="s3h">Pharmacoeconomics &amp; HTA support</h3><p data-i18n="s3p">Cost-effectiveness and budget-impact analysis, value dossiers and evidence packages for reimbursement and formulary decisions.</p>
+      </div>
+      <div class="tilt glass card reveal" data-d="1"><div class="glare"></div>
+        <span class="num">04</span>
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9 13h6M9 16h4"/></svg></div>
+        <h3 data-i18n="s4h">Regulatory documentation &amp; translation</h3><p data-i18n="s4p">Dossier support (including eCTD-aligned structure) and technical / medical RU ↔ EN translation and document preparation.</p>
+      </div>
+      <div class="tilt glass card reveal" data-d="2"><div class="glare"></div>
+        <span class="num">05</span>
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v6l9 4 9-4V7"/></svg></div>
+        <h3 data-i18n="s5h">Russian market support</h3><p data-i18n="s5p">Supplier and CMO identification, contract-manufacturing localisation, and documentation updates to current RU / EAEU requirements.</p>
+      </div>
+      <div class="tilt glass card reveal" data-d="3"><div class="glare"></div>
+        <span class="num">06</span>
+        <div class="ci"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></div>
+        <h3 data-i18n="s6h">Market research &amp; financial modelling</h3><p data-i18n="s6p">Market sizing, forecasting, pricing scenarios and decision-ready business cases — segment analysis of the pharma market.</p>
+      </div>
+      <div class="tilt glass card reveal" data-d="1"><div class="glare"></div>
+        <span class="num">07</span>
+        <div class="ci"><svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="12" cy="17" r="3"/><path d="M7 10v2a2 2 0 002 2h6a2 2 0 002-2v-2"/></svg></div>
+        <h3 data-i18n="s7h">Public affairs &amp; stakeholder engagement</h3><p data-i18n="s7p">Compliant liaison with industry associations and regulatory bodies; international research channels (incl. Singapore) on request.</p>
+      </div>
+    </div>
+
+    <div class="diff glass reveal" data-d="2">
+      <span class="badge" data-i18n="diffBadge">Distinctive competence</span>
+      <div>
+        <h3 data-i18n="diffH">Digital analytics at the IT × healthcare intersection</h3>
+        <p data-i18n="diffP">Interactive dashboards and automated pipelines for collecting and processing data — tenders / ЕИС, customs statistics, open registries — plus predictive models of access and demand. International research channels (incl. Singapore / ASEAN) engaged where needed.</p>
+        <div class="tags">
+          <span class="pill">Dashboards</span><span class="pill">Tenders / ЕИС</span><span class="pill">Customs data</span><span class="pill">Registries</span><span class="pill">Forecasting</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- second track — broader advisory (kept less prominent than pharma) -->
+    <div style="margin-top:76px">
+      <p class="eyebrow reveal" data-i18n="ebAlso">Second track</p>
+      <h2 class="sec reveal" data-d="1" style="font-size:clamp(24px,3.4vw,40px)" data-i18n="alsoH">The same toolkit, beyond life sciences.</h2>
+      <p class="lede reveal" data-d="2" data-i18n="alsoLede">Pharma market access is the practice's headline work — and it rests on a broader base: financial modelling, software delivery and data engineering for clients across industries.</p>
+      <div class="cards">
+        <div class="tilt glass card reveal" data-d="1"><div class="glare"></div>
+          <span class="num">08</span>
+          <div class="ci"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6.4 6.1"/></svg></div>
+          <h3 data-i18n="s8h">Financial modelling &amp; analysis</h3><p data-i18n="s8p">Models for investment programmes and venture portfolios, pricing and unit economics — decision-ready business cases, Excel/VBA automation, dashboards.</p>
+        </div>
+        <div class="tilt glass card reveal" data-d="2"><div class="glare"></div>
+          <span class="num">09</span>
+          <div class="ci"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+          <h3 data-i18n="s9h">Software &amp; app engineering consultancy</h3><p data-i18n="s9p">Full-cycle IT delivery from idea and backlog to production — product &amp; project management, Agile at scale, pre-sale support and rapid prototyping.</p>
+        </div>
+        <div class="tilt glass card reveal" data-d="3"><div class="glare"></div>
+          <span class="num">10</span>
+          <div class="ci"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+          <h3 data-i18n="s10h">Data &amp; analytics engineering</h3><p data-i18n="s10p">Automated pipelines, interactive dashboards and forecasting models — the common technical thread across both tracks of the practice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD --------------------------------------------------------- -->
+<section id="method">
+  <div class="wrap">
+    <p class="eyebrow reveal" data-i18n="ebMethod">Method</p>
+    <h2 class="sec reveal" data-d="1" data-i18n-html="methodH">Every recommendation framed in <span class="grad">evidence.</span></h2>
+    <p class="lede reveal" data-d="2" data-i18n="methodLede">Three principles run through the work — from the first data pull to the final dossier.</p>
+
+    <div class="method">
+      <div class="mcard glass reveal" data-d="1">
+        <span class="mn">01</span>
+        <h3 data-i18n="m1h">Evidence &amp; pharmacoeconomics</h3>
+        <p data-i18n="m1p">Market data, forecasting, cost-effectiveness and budget-impact modelling — decision-ready business cases in numbers a payer can act on.</p>
+      </div>
+      <div class="mcard glass reveal" data-d="2">
+        <span class="mn">02</span>
+        <h3 data-i18n="m2h">Regulatory &amp; documentation</h3>
+        <p data-i18n="m2p">Accurate, audit-ready dossiers for pharmaceuticals and technical files for devices — with translation and localisation aligned to RU / EAEU requirements.</p>
+      </div>
+      <div class="mcard glass reveal" data-d="3">
+        <span class="mn">03</span>
+        <h3 data-i18n="m3h">Access &amp; engagement</h3>
+        <p data-i18n="m3p">Compliant stakeholder engagement built on transparent, association-led channels — and international research where a question needs it.</p>
+      </div>
+    </div>
+
+    <div class="orbit-wrap">
+      <div class="reveal">
+        <h2 class="sec" style="font-size:clamp(24px,3.4vw,40px)" data-i18n="orbitH">The toolkit behind the analytics.</h2>
+        <p class="lede" data-d="1" data-i18n="orbitP">A working constellation of the regulatory frameworks, evidence methods and data sources the practice moves between — the vocabulary of market access, rendered live.</p>
+      </div>
+      <div class="scene reveal" data-d="2">
+        <div class="orbit" id="orbit">
+          <div class="core"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACK RECORD --------------------------------------------------- -->
+<section id="track">
+  <div class="wrap">
+    <p class="eyebrow reveal" data-i18n="ebTrack">Track record</p>
+    <h2 class="sec reveal" data-d="1" data-i18n="trackH">Delivered in Russia, connected internationally.</h2>
+    <p class="lede reveal" data-d="2" data-i18n="trackLede">Representative engagements across regulatory documentation, sourcing, analytics and international research.</p>
+
+    <div class="work">
+      <div class="proj glass reveal" data-d="1">
+        <div class="ph">Russia / EAEU <i></i> <span data-i18n="tr1ph">regulatory</span></div>
+        <h3 data-i18n="tr1h">Pharma localisation &amp; dossier advisory</h3>
+        <p data-i18n="tr1p">Advised Russian pharmaceutical clients on registration dossiers, contract-manufacturing localisation, and documentation updates to current RU / EAEU requirements.</p>
+        <div class="meta"><span class="pill">Dossier</span><span class="pill">Localisation</span><span class="pill">EAEU</span></div>
+      </div>
+      <div class="proj glass reveal" data-d="2">
+        <div class="ph">Russia / EAEU <i></i> <span data-i18n="tr2ph">market</span></div>
+        <h3 data-i18n="tr2h">Sourcing &amp; market support</h3>
+        <p data-i18n="tr2p">Supplier and partner identification in pharma manufacturing, with support for customers updating product documentation and navigating EAEU procedures.</p>
+        <div class="meta"><span class="pill">Sourcing</span><span class="pill">CMO</span><span class="pill">Compliance</span></div>
+      </div>
+      <div class="proj glass reveal" data-d="3">
+        <div class="ph">International <i></i> <span data-i18n="tr3ph">research</span></div>
+        <h3 data-i18n="tr3h">Contract research coordination</h3>
+        <p data-i18n="tr3p">Coordinated contract research with international partners across Southeast Asia, including engagement with a national research agency and a national innovation programme.</p>
+        <div class="meta"><span class="pill">Southeast Asia</span><span class="pill">Contract R&amp;D</span><span class="pill">International</span></div>
+      </div>
+      <div class="proj glass reveal" data-d="4">
+        <div class="ph">Analytics <i></i> <span data-i18n="tr4ph">modelling</span></div>
+        <h3 data-i18n="tr4h">Market analytics &amp; forecasting</h3>
+        <p data-i18n="tr4p">Segment sizing and demand scenarios for the pharma market, built on automated data pipelines (tenders / ЕИС, customs statistics, registries) and interactive dashboards.</p>
+        <div class="meta"><span class="pill">Forecasting</span><span class="pill">Dashboards</span><span class="pill">HTA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -------------------------------------------------------- -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact glass reveal">
+      <p class="eyebrow" style="justify-content:center" data-i18n="ebContact">Let's talk</p>
+      <h2 data-i18n-html="contactH">Discuss your <span class="grad">market-access needs.</span></h2>
+      <p data-i18n="contactP">Registration, dossiers, HTA evidence, market analytics, or documentation that has to hold up under review — I'm easy to reach.</p>
+      <div class="cta-row">
+        <button class="btn btn-primary" type="button" id="copyEmail" data-email="evgeniy.mitrokhin@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+          <span data-i18n="ctaCopy">Copy email</span>
+        </button>
+        <a class="btn" href="mailto:evgeniy.mitrokhin@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          evgeniy.mitrokhin@gmail.com
+        </a>
+      </div>
+      <p class="copy-msg" id="copyMsg" aria-live="polite"></p>
+
+      <div class="identity">
+        <span class="idcell"><b data-i18n="idName">Entity</b><span>ИП Митрохин Евгений Максимович</span></span>
+        <span class="idcell"><b>ОГРНИП</b><span>319774600252261</span></span>
+        <span class="idcell"><b>ИНН</b><span>773433517310</span></span>
+        <span class="idcell"><b>ОКВЭД</b><span>70.22</span></span>
+        <span class="idcell"><b data-i18n="idLoc">Location</b><span data-i18n="idLocv">Moscow, RF</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span><b></b>ИП Митрохин Е.М. · <span data-i18n="footTag">Market access · Russia / EAEU</span></span><br>
+  <span data-i18n="footLegal">ОГРНИП 319774600252261 · ИНН 773433517310 · Moscow</span> · <span id="year"></span>
+</footer>
+
+<script>
+/* ============================================================
+   0. helpers + reduced motion
+   ============================================================ */
+const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]static\b/.test(location.search);
+document.querySelectorAll('svg').forEach(s=>{ s.setAttribute('aria-hidden','true'); s.setAttribute('focusable','false'); });
+const lerp = (a,b,t)=>a+(b-a)*t;
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ============================================================
+   1. i18n  —  EN default, RU toggle (persisted)
+   ============================================================ */
+const TR = {
+  en: {
+    _title: "ИП Митрохин Е.М. — Market Access, Regulatory & Documentation · Russia / EAEU",
+    _desc: "Independent Moscow-based advisory for pharmaceutical and medical-device companies: regulatory affairs, pharmacoeconomics & HTA, market analytics and market access across Russia / EAEU — backed by financial modelling and software-delivery consulting. Active since 2019.",
+    skip: "Skip to content",
+    brandTag: "market access",
+    navPractice: "Practice", navServices: "Services", navMethod: "Method", navTrack: "Track record", navContact: "Contact",
+    heroStatus: "Independent practice · Moscow · since 2019",
+    heroKicker: "Pharmaceuticals · Medical devices",
+    heroName: "Market access, regulatory & documentation",
+    heroRole: 'Russia / EAEU — evidence-led support for <span class="grad">life-sciences companies.</span><span class="caret"></span>',
+    heroSub: "An independent Moscow-based advisory helping pharmaceutical and medical-device companies with regulatory documentation, pharmacoeconomic evidence, market analytics and market entry across Russia and the EAEU — active since 2019.",
+    ctaServices: "View services", ctaContact: "Contact",
+    hudHead: "// focus areas",
+    hudA: "Regulatory affairs", hudB: "Pharmacoeconomics · HTA", hudC: "Market analytics", hudCv: "data-driven",
+    hudD: "Documentation · RU ↔ EN", hudDv: "audit-ready", hudE: "Public affairs", hudEv: "compliant",
+    hudF: "Finance · software delivery", hudFv: "second track",
+    scroll: "scroll",
+    ebPractice: "The practice",
+    practiceH: 'Independent advisory for <span class="grad">life-sciences market access.</span>',
+    practiceP1: "A Moscow-based independent consulting practice, active <strong>since 2019</strong>, supporting pharmaceutical and medical-device companies on <strong>commercial strategy, regulatory documentation, pharmacoeconomic evidence</strong> and <strong>market access</strong> across Russia and the EAEU.",
+    practiceP2: "Every recommendation is framed in evidence a payer or regulator can act on — with <strong>international research channels</strong> (including Singapore / ASEAN) available where a question reaches beyond the region.",
+    ebGlance: "At a glance",
+    glA: "Scope", glAv: "Pharma & medical devices · finance & IT advisory",
+    glB: "Geography", glBv: "Russia / EAEU · international channels",
+    glC: "Active since", glCv: "2019 · independent practice",
+    glD: "Based in", glDv: "Moscow, Russian Federation",
+    glE: "Legal status", glEv: "Sole proprietor (ИП) · ОГРНИП 319774600252261",
+    ebServices: "Services",
+    servicesH: "How we support market access.",
+    servicesLede: "A focused set of services for entering and operating in the Russian and EAEU life-sciences market. Exact scope and deliverables are agreed with each client.",
+    s1h: "Regulatory & market-access advisory — pharma", s1p: "RU / EAEU registration pathways, reimbursement listing (ЖНВЛП) and localisation requirements for pharmaceutical products.",
+    s2h: "Medical-device registration & compliance", s2p: "Roszdravnadzor and EAEU device pathways — technical files, conformity, and post-market vigilance documentation.",
+    s3h: "Pharmacoeconomics & HTA support", s3p: "Cost-effectiveness and budget-impact analysis, value dossiers and evidence packages for reimbursement and formulary decisions.",
+    s4h: "Regulatory documentation & translation", s4p: "Dossier support (including eCTD-aligned structure) and technical / medical RU ↔ EN translation and document preparation.",
+    s5h: "Russian market support", s5p: "Supplier and CMO identification, contract-manufacturing localisation, and documentation updates to current RU / EAEU requirements.",
+    s6h: "Market research & financial modelling", s6p: "Market sizing, forecasting, pricing scenarios and decision-ready business cases — segment analysis of the pharma market.",
+    s7h: "Public affairs & stakeholder engagement", s7p: "Compliant liaison with industry associations and regulatory bodies; international research channels (incl. Singapore) on request.",
+    diffBadge: "Distinctive competence",
+    diffH: "Digital analytics at the IT × healthcare intersection",
+    diffP: "Interactive dashboards and automated pipelines for collecting and processing data — tenders / ЕИС, customs statistics, open registries — plus predictive models of access and demand. International research channels (incl. Singapore / ASEAN) engaged where needed.",
+    ebAlso: "Second track",
+    alsoH: "The same toolkit, beyond life sciences.",
+    alsoLede: "Pharma market access is the practice's headline work — and it rests on a broader base: financial modelling, software delivery and data engineering for clients across industries.",
+    s8h: "Financial modelling & analysis", s8p: "Models for investment programmes and venture portfolios, pricing and unit economics — decision-ready business cases, Excel/VBA automation, dashboards.",
+    s9h: "Software & app engineering consultancy", s9p: "Full-cycle IT delivery from idea and backlog to production — product & project management, Agile at scale, pre-sale support and rapid prototyping.",
+    s10h: "Data & analytics engineering", s10p: "Automated pipelines, interactive dashboards and forecasting models — the common technical thread across both tracks of the practice.",
+    ebMethod: "Method",
+    methodH: 'Every recommendation framed in <span class="grad">evidence.</span>',
+    methodLede: "Three principles run through the work — from the first data pull to the final dossier.",
+    m1h: "Evidence & pharmacoeconomics", m1p: "Market data, forecasting, cost-effectiveness and budget-impact modelling — decision-ready business cases in numbers a payer can act on.",
+    m2h: "Regulatory & documentation", m2p: "Accurate, audit-ready dossiers for pharmaceuticals and technical files for devices — with translation and localisation aligned to RU / EAEU requirements.",
+    m3h: "Access & engagement", m3p: "Compliant stakeholder engagement built on transparent, association-led channels — and international research where a question needs it.",
+    orbitH: "The toolkit behind the analytics.",
+    orbitP: "A working constellation of the regulatory frameworks, evidence methods and data sources the practice moves between — the vocabulary of market access, rendered live.",
+    ebTrack: "Track record",
+    trackH: "Delivered in Russia, connected internationally.",
+    trackLede: "Representative engagements across regulatory documentation, sourcing, analytics and international research.",
+    tr1ph: "regulatory", tr1h: "Pharma localisation & dossier advisory", tr1p: "Advised Russian pharmaceutical clients on registration dossiers, contract-manufacturing localisation, and documentation updates to current RU / EAEU requirements.",
+    tr2ph: "market", tr2h: "Sourcing & market support", tr2p: "Supplier and partner identification in pharma manufacturing, with support for customers updating product documentation and navigating EAEU procedures.",
+    tr3ph: "research", tr3h: "Contract research coordination", tr3p: "Coordinated contract research with international partners across Southeast Asia, including engagement with a national research agency and a national innovation programme.",
+    tr4ph: "modelling", tr4h: "Market analytics & forecasting", tr4p: "Segment sizing and demand scenarios for the pharma market, built on automated data pipelines (tenders / ЕИС, customs statistics, registries) and interactive dashboards.",
+    ebContact: "Let's talk",
+    contactH: 'Discuss your <span class="grad">market-access needs.</span>',
+    contactP: "Registration, dossiers, HTA evidence, market analytics, or documentation that has to hold up under review — I'm easy to reach.",
+    ctaCopy: "Copy email",
+    idName: "Entity", idLoc: "Location", idLocv: "Moscow, RF",
+    footTag: "Market access · Russia / EAEU",
+    footLegal: "ОГРНИП 319774600252261 · ИНН 773433517310 · Moscow",
+    copied: "Copied", copyfail: "Copy failed — "
+  },
+  ru: {
+    _title: "ИП Митрохин Е.М. — Market access, регуляторика и документация · РФ / ЕАЭС",
+    _desc: "Независимая московская практика для фарм- и медтех-компаний: регуляторное сопровождение, фармакоэкономика и HTA, аналитика рынка и market access на территории РФ / ЕАЭС — плюс финансовое моделирование и консалтинг в разработке ПО. С 2019 года.",
+    skip: "Перейти к содержанию",
+    brandTag: "market access",
+    navPractice: "Практика", navServices: "Услуги", navMethod: "Подход", navTrack: "Опыт", navContact: "Контакты",
+    heroStatus: "Независимая практика · Москва · с 2019",
+    heroKicker: "Лекарственные средства · Медизделия",
+    heroName: "Market access, регуляторика и документация",
+    heroRole: 'РФ / ЕАЭС — доказательная поддержка <span class="grad">life-sciences компаний.</span><span class="caret"></span>',
+    heroSub: "Независимая московская практика: помогаю фарм- и медтех-компаниям с регуляторной документацией, фармакоэкономическими данными, аналитикой рынка и выводом продукции на рынок РФ и ЕАЭС — с 2019 года.",
+    ctaServices: "Смотреть услуги", ctaContact: "Контакты",
+    hudHead: "// направления",
+    hudA: "Регуляторика", hudB: "Фармакоэкономика · HTA", hudC: "Аналитика рынка", hudCv: "на данных",
+    hudD: "Документация · RU ↔ EN", hudDv: "под аудит", hudE: "GR / public affairs", hudEv: "комплаенс",
+    hudF: "Финансы · разработка ПО", hudFv: "второй трек",
+    scroll: "листайте",
+    ebPractice: "Практика",
+    practiceH: 'Независимое сопровождение <span class="grad">market access в life-sciences.</span>',
+    practiceP1: "Независимая консалтинговая практика в Москве, работает <strong>с 2019 года</strong>. Поддержка фарм- и медтех-компаний по вопросам <strong>коммерческой стратегии, регуляторной документации, фармакоэкономических данных</strong> и <strong>market access</strong> на территории РФ и ЕАЭС.",
+    practiceP2: "Каждая рекомендация опирается на данные, с которыми может работать плательщик или регулятор — с доступом к <strong>международным исследовательским каналам</strong> (в т.ч. Сингапур / АСЕАН), когда задача выходит за пределы региона.",
+    ebGlance: "Коротко",
+    glA: "Направление", glAv: "Фарма и медизделия · финансы и ИТ-консалтинг",
+    glB: "География", glBv: "РФ / ЕАЭС · международные каналы",
+    glC: "Работает с", glCv: "2019 · независимая практика",
+    glD: "База", glDv: "Москва, Российская Федерация",
+    glE: "Статус", glEv: "ИП · ОГРНИП 319774600252261",
+    ebServices: "Услуги",
+    servicesH: "Как мы сопровождаем market access.",
+    servicesLede: "Сфокусированный набор услуг для выхода и работы на фармрынке РФ и ЕАЭС. Точный состав и результаты согласуются с каждым заказчиком.",
+    s1h: "Регуляторика и market access — фарма", s1p: "Пути регистрации в РФ / ЕАЭС, включение в перечни возмещения (ЖНВЛП) и требования к локализации для лекарственных препаратов.",
+    s2h: "Регистрация и соответствие медизделий", s2p: "Пути регистрации медизделий (Росздравнадзор, ЕАЭС) — технические файлы, оценка соответствия, документация пострегистрационного надзора.",
+    s3h: "Фармакоэкономика и HTA", s3p: "Анализ «затраты–эффективность» и влияния на бюджет, value-досье и доказательные пакеты для решений о возмещении и включении в формуляры.",
+    s4h: "Регуляторная документация и перевод", s4p: "Сопровождение досье (в т.ч. в структуре eCTD) и технический / медицинский перевод RU ↔ EN, подготовка документов.",
+    s5h: "Поддержка на рынке РФ", s5p: "Поиск поставщиков и CMO, локализация контрактного производства, актуализация документации под действующие требования РФ / ЕАЭС.",
+    s6h: "Исследования рынка и фин. моделирование", s6p: "Оценка объёма рынка, прогнозирование, ценовые сценарии и готовые к решению бизнес-кейсы — сегментный анализ фармрынка.",
+    s7h: "GR и взаимодействие со стейкхолдерами", s7p: "Комплаентное взаимодействие с отраслевыми ассоциациями и регуляторами; международные исследовательские каналы (в т.ч. Сингапур) по запросу.",
+    diffBadge: "Отличительная компетенция",
+    diffH: "Цифровая аналитика на стыке ИТ и здравоохранения",
+    diffP: "Интерактивные дашборды и автоматизированные конвейеры сбора и обработки данных — тендеры / ЕИС, таможенная статистика, открытые регистры — и прогнозные модели доступа и спроса. При необходимости — с привлечением международных исследовательских каналов (вкл. Сингапур / АСЕАН).",
+    ebAlso: "Второе направление",
+    alsoH: "Тот же инструментарий — за пределами life sciences.",
+    alsoLede: "Фармацевтический market access — главная работа практики, и она опирается на более широкую базу: финансовое моделирование, разработка ПО и инженерия данных для заказчиков из разных отраслей.",
+    s8h: "Финансовое моделирование и анализ", s8p: "Модели для инвестиционных программ и венчурных портфелей, ценообразование и юнит-экономика — готовые к решению бизнес-кейсы, автоматизация Excel/VBA, дашборды.",
+    s9h: "Консалтинг в разработке ПО и приложений", s9p: "Полный цикл ИТ-поставки — от идеи и бэклога до продакшена: продуктовый и проектный менеджмент, Agile в масштабе, пресейл и быстрое прототипирование.",
+    s10h: "Данные и аналитическая инженерия", s10p: "Автоматизированные конвейеры данных, интерактивные дашборды и прогнозные модели — общая техническая нить обоих направлений практики.",
+    ebMethod: "Подход",
+    methodH: 'Каждая рекомендация опирается на <span class="grad">данные.</span>',
+    methodLede: "Три принципа проходят через всю работу — от первой выгрузки данных до финального досье.",
+    m1h: "Доказательства и фармакоэкономика", m1p: "Данные рынка, прогнозирование, моделирование «затраты–эффективность» и влияния на бюджет — бизнес-кейсы в цифрах, с которыми может работать плательщик.",
+    m2h: "Регуляторика и документация", m2p: "Точные, готовые к аудиту досье для препаратов и технические файлы для медизделий — с переводом и локализацией под требования РФ / ЕАЭС.",
+    m3h: "Доступ и взаимодействие", m3p: "Комплаентное взаимодействие со стейкхолдерами через прозрачные, ассоциативные каналы — и международные исследования там, где это нужно задаче.",
+    orbitH: "Инструментарий за аналитикой.",
+    orbitP: "Живое созвездие регуляторных рамок, доказательных методов и источников данных, между которыми движется практика — словарь market access в движении.",
+    ebTrack: "Опыт",
+    trackH: "Реализовано в России, связи по миру.",
+    trackLede: "Показательные проекты: регуляторная документация, поиск партнёров, аналитика и международные исследования.",
+    tr1ph: "регуляторика", tr1h: "Локализация и сопровождение досье", tr1p: "Консультировал российских фармпроизводителей по регистрационным досье, локализации контрактного производства и обновлению документации под действующие требования РФ / ЕАЭС.",
+    tr2ph: "рынок", tr2h: "Поиск партнёров и поддержка на рынке", tr2p: "Поиск поставщиков и партнёров в фармпроизводстве, поддержка заказчиков в обновлении документации и прохождении процедур ЕАЭС.",
+    tr3ph: "исследования", tr3h: "Координация контрактных исследований", tr3p: "Координация контрактных исследований с международными партнёрами в Юго-Восточной Азии, включая взаимодействие с национальным исследовательским агентством и национальной инновационной программой.",
+    tr4ph: "моделирование", tr4h: "Аналитика и прогнозирование рынка", tr4p: "Оценка сегментов и сценарии спроса на фармрынке на базе автоматизированных конвейеров данных (тендеры / ЕИС, таможенная статистика, регистры) и интерактивных дашбордов.",
+    ebContact: "Свяжитесь",
+    contactH: 'Обсудим ваши <span class="grad">задачи market access.</span>',
+    contactP: "Регистрация, досье, HTA-доказательства, аналитика рынка или документация, которая должна выдержать проверку — со мной легко связаться.",
+    ctaCopy: "Скопировать e-mail",
+    idName: "Субъект", idLoc: "Локация", idLocv: "Москва, РФ",
+    footTag: "Market access · РФ / ЕАЭС",
+    footLegal: "ОГРНИП 319774600252261 · ИНН 773433517310 · Москва",
+    copied: "Скопировано", copyfail: "Не удалось скопировать — "
+  }
+};
+
+let LANG = 'en';
+function applyLang(lang){
+  const dict = TR[lang] || TR.en; LANG = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n'); if(dict[k] != null) el.textContent = dict[k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const k = el.getAttribute('data-i18n-html'); if(dict[k] != null) el.innerHTML = dict[k];
+  });
+  if(dict._title) document.title = dict._title;
+  const md = document.querySelector('meta[name="description"]'); if(md && dict._desc) md.setAttribute('content', dict._desc);
+  document.querySelectorAll('.lang button').forEach(b=> b.setAttribute('aria-pressed', String(b.dataset.lang===lang)));
+  try{ localStorage.setItem('site-lang', lang); }catch(e){}
+}
+document.querySelectorAll('.lang button').forEach(b=>{
+  b.addEventListener('click', ()=> applyLang(b.dataset.lang));
+});
+(function initLang(){
+  let saved = null; try{ saved = localStorage.getItem('site-lang'); }catch(e){}
+  applyLang(saved === 'ru' ? 'ru' : 'en');   // English default
+})();
+
+/* ============================================================
+   2. scroll progress + nav state
+   ============================================================ */
+const nav = document.getElementById('nav'), prog = document.getElementById('progress');
+function onScroll(){
+  const st = window.scrollY || document.documentElement.scrollTop;
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  prog.style.width = (h>0 ? (st/h*100) : 0) + '%';
+  nav.classList.toggle('scrolled', st > 30);
+}
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+/* smooth anchor scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const id = a.getAttribute('href');
+    if(id.length < 2){ e.preventDefault(); return; }
+    const el = document.querySelector(id);
+    if(el){ e.preventDefault();
+      window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 64, behavior:'smooth'});
+      if(el.hasAttribute('tabindex')) el.focus({preventScroll:true}); }
+  });
+});
+
+/* ============================================================
+   3. scroll reveal
+   ============================================================ */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+  });
+},{threshold:.16, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+/* ============================================================
+   4. pointer spotlight + orb / hud parallax
+   ============================================================ */
+const spot = document.getElementById('spot'), hud = document.getElementById('hud');
+let pmx = .5, pmy = .5, tmx = .5, tmy = .5;
+window.addEventListener('pointermove', e=>{
+  tmx = e.clientX / window.innerWidth; tmy = e.clientY / window.innerHeight;
+  spot.style.left = e.clientX+'px'; spot.style.top = e.clientY+'px';
+});
+const orbs = document.querySelectorAll('.orb');
+function parallaxLoop(){
+  pmx = lerp(pmx, tmx, .06); pmy = lerp(pmy, tmy, .06);
+  const dx = (pmx-.5), dy = (pmy-.5);
+  orbs.forEach(o=>{ const p = parseFloat(o.dataset.par)*120; o.style.transform = `translate(${dx*p}px,${dy*p}px)`; });
+  if(hud) hud.style.transform = `perspective(900px) rotateY(${ -dx*8 }deg) rotateX(${ dy*8 }deg) translateZ(0)`;
+  requestAnimationFrame(parallaxLoop);
+}
+if(!RM) parallaxLoop();
+
+/* ============================================================
+   5. tilt cards with glare
+   ============================================================ */
+if(!RM && !window.matchMedia('(pointer:coarse)').matches){
+  document.querySelectorAll('.tilt').forEach(card=>{
+    card.addEventListener('pointermove', e=>{
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left)/r.width, y = (e.clientY - r.top)/r.height;
+      card.style.transform = `perspective(800px) rotateY(${(x-.5)*10}deg) rotateX(${(.5-y)*10}deg) translateY(-4px)`;
+      const g = card.querySelector('.glare');
+      if(g){ g.style.setProperty('--mx', (x*100)+'%'); g.style.setProperty('--my', (y*100)+'%'); }
+    });
+    card.addEventListener('pointerleave', ()=> card.style.transform = '');
+  });
+}
+
+/* ============================================================
+   6. magnetic buttons
+   ============================================================ */
+if(!RM && !window.matchMedia('(pointer:coarse)').matches) document.querySelectorAll('.btn').forEach(b=>{
+  b.addEventListener('pointermove', e=>{ const r=b.getBoundingClientRect();
+    b.style.transform = `translate(${(e.clientX-r.left-r.width/2)*.25}px, ${(e.clientY-r.top-r.height/2)*.4}px)`; });
+  b.addEventListener('pointerleave', ()=> b.style.transform='');
+});
+
+/* ============================================================
+   7. HERO — rotating 3D network constellation (canvas)
+   ============================================================ */
+(function(){
+  const cv = document.getElementById('net'); if(!cv) return;
+  const ctx = cv.getContext('2d');
+  let W, H, DPR, nodes = [], rot = 0, rx = 0, ry = 0, trx = 0, try_ = 0;
+  const N = window.innerWidth < 640 ? 60 : 112;
+  const SPREAD = 1, CAM = 2.6, FOV = 1;
+
+  function resize(){
+    DPR = Math.min(window.devicePixelRatio||1, 2);
+    const host = cv.parentElement.getBoundingClientRect();
+    W = host.width; H = host.height;
+    cv.width = W*DPR; cv.height = H*DPR; cv.style.width=W+'px'; cv.style.height=H+'px';
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
+  function build(){
+    nodes = [];
+    for(let i=0;i<N;i++){
+      const u = Math.random()*2-1, th = Math.random()*Math.PI*2, r = Math.cbrt(Math.random())*SPREAD;
+      const s = Math.sqrt(1-u*u);
+      nodes.push({ x:Math.cos(th)*s*r, y:u*r, z:Math.sin(th)*s*r, pulse: Math.random()*Math.PI*2 });
+    }
+  }
+  function project(p, cax, sax, cay, say){
+    let x = p.x*cay + p.z*say;
+    let z = -p.x*say + p.z*cay;
+    let y = p.y*cax - z*sax;
+    z = p.y*sax + z*cax;
+    const scale = FOV / (CAM - z);
+    return { sx: W/2 + x*scale*Math.min(W,H)*0.46, sy: H/2 + y*scale*Math.min(W,H)*0.46, s:scale, z };
+  }
+  window.addEventListener('pointermove', e=>{
+    const r = cv.getBoundingClientRect();
+    trx = ((e.clientY - r.top)/r.height - .5) * .5;
+    try_ = ((e.clientX - r.left)/r.width - .5) * .8;
+  });
+
+  let t = 0;
+  function draw(){
+    t += 0.016; rot += 0.0014;
+    rx = lerp(rx, trx, .05); ry = lerp(ry, try_, .05);
+    const cax = Math.cos(rx), sax = Math.sin(rx);
+    const cay = Math.cos(rot+ry), say = Math.sin(rot+ry);
+    ctx.clearRect(0,0,W,H);
+    const pts = nodes.map(p=>{ const q = project(p, cax, sax, cay, say); q.p = p; return q; });
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const a = pts[i], b = pts[j];
+        const dx=a.p.x-b.p.x, dy=a.p.y-b.p.y, dz=a.p.z-b.p.z;
+        const d = Math.sqrt(dx*dx+dy*dy+dz*dz);
+        if(d < 0.52){
+          const al = (1 - d/0.52) * 0.5 * Math.min(a.s,b.s)*0.9;
+          ctx.strokeStyle = `rgba(77,163,255,${al})`; ctx.lineWidth = 0.6;
+          ctx.beginPath(); ctx.moveTo(a.sx,a.sy); ctx.lineTo(b.sx,b.sy); ctx.stroke();
+        }
+      }
+    }
+    pts.sort((a,b)=>a.z-b.z);
+    for(const q of pts){
+      const depth = (q.z + 1.4)/2.8;
+      const r = Math.max(0.6, q.s*2.2);
+      const pulse = 0.6 + 0.4*Math.sin(t*1.6 + q.p.pulse);
+      const near = depth > .62;
+      ctx.beginPath(); ctx.arc(q.sx, q.sy, r, 0, Math.PI*2);
+      ctx.fillStyle = near ? `rgba(77,163,255,${0.5+0.32*pulse})` : `rgba(120,140,165,${0.16+0.2*depth})`;
+      ctx.shadowBlur = near ? 16*pulse : 0; ctx.shadowColor = 'rgba(77,163,255,.9)';
+      ctx.fill(); ctx.shadowBlur = 0;
+    }
+    rafN = requestAnimationFrame(draw);
+  }
+  function drawStatic(){
+    const cax=Math.cos(.18),sax=Math.sin(.18),cay=Math.cos(.6),say=Math.sin(.6);
+    ctx.clearRect(0,0,W,H);
+    const pts = nodes.map(p=>project(p,cax,sax,cay,say));
+    pts.forEach(q=>{ ctx.beginPath(); ctx.arc(q.sx,q.sy,Math.max(1,q.s*2),0,7); ctx.fillStyle='rgba(77,163,255,.35)'; ctx.fill(); });
+  }
+  resize(); build();
+  window.addEventListener('resize', ()=>{ resize(); if(RM) drawStatic(); });
+  let rafN = 0;
+  if(RM){ drawStatic(); }
+  else {
+    const io2 = new IntersectionObserver(es=>{
+      if(es[0].isIntersecting){ if(!rafN) rafN = requestAnimationFrame(draw); }
+      else if(rafN){ cancelAnimationFrame(rafN); rafN = 0; }
+    }, {rootMargin:'200px'});
+    io2.observe(cv.parentElement);
+  }
+})();
+
+/* ============================================================
+   8. subtle WebGL atmosphere (domain-warped fbm, no hue-cycling)
+   ============================================================ */
+(function(){
+  const cv = document.getElementById('gl'); if(!cv) return;
+  const gl = cv.getContext('webgl') || cv.getContext('experimental-webgl');
+  if(!gl){ cv.style.display='none'; return; }
+  const VS = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.0,1.0);}';
+  const FS = [
+    'precision highp float;',
+    'uniform vec2 u_res; uniform float u_time; uniform vec2 u_mouse;',
+    'float hash(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}',
+    'float noise(vec2 p){vec2 i=floor(p),f=fract(p);float a=hash(i),b=hash(i+vec2(1.,0.)),c=hash(i+vec2(0.,1.)),d=hash(i+vec2(1.,1.));vec2 u=f*f*(3.-2.*f);return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);}',
+    'float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<6;i++){v+=a*noise(p);p=p*2.+vec2(11.3,7.7);a*=.5;}return v;}',
+    'void main(){',
+    ' vec2 uv=(gl_FragCoord.xy-0.5*u_res)/u_res.y;',
+    ' vec2 m=(u_mouse-0.5);',
+    ' float t=u_time*0.04;',
+    ' vec2 q=vec2(fbm(uv*1.5+t),fbm(uv*1.5+vec2(5.2,1.3)-t));',
+    ' vec2 r=vec2(fbm(uv*1.5+4.0*q+vec2(1.7,9.2)+m*0.5),fbm(uv*1.5+4.0*q+vec2(8.3,2.8)-m*0.5));',
+    ' float f=fbm(uv*1.5+4.0*r+t);',
+    ' vec3 c1=vec3(0.01,0.02,0.04);',
+    ' vec3 c2=vec3(0.03,0.20,0.42);',
+    ' vec3 c3=vec3(0.10,0.42,0.68);',
+    ' vec3 col=mix(c1,c2,smoothstep(0.0,0.85,f));',
+    ' col=mix(col,c3,smoothstep(0.55,1.25,length(r)));',
+    ' float glow=pow(f,3.0);',
+    ' col+=vec3(0.28,0.55,1.0)*glow*0.6;',
+    ' float vig=smoothstep(1.35,0.15,length(uv));',
+    ' col*=vig;',
+    ' col+=(hash(gl_FragCoord.xy+t)-0.5)*0.02;',
+    ' gl_FragColor=vec4(col,1.0);',
+    '}'
+  ].join('\n');
+  function sh(type,src){ const s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s);
+    if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)) console.warn(gl.getShaderInfoLog(s)); return s; }
+  const prog2=gl.createProgram();
+  gl.attachShader(prog2,sh(gl.VERTEX_SHADER,VS));
+  gl.attachShader(prog2,sh(gl.FRAGMENT_SHADER,FS));
+  gl.linkProgram(prog2);
+  if(!gl.getProgramParameter(prog2,gl.LINK_STATUS)){ cv.style.display='none'; return; }
+  gl.useProgram(prog2);
+  const buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1, 3,-1, -1,3]),gl.STATIC_DRAW);
+  const loc=gl.getAttribLocation(prog2,'p'); gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  const uRes=gl.getUniformLocation(prog2,'u_res'), uTime=gl.getUniformLocation(prog2,'u_time'), uMouse=gl.getUniformLocation(prog2,'u_mouse');
+  let gx=.5, gy=.5, tx=.5, ty=.5;
+  window.addEventListener('pointermove', e=>{ tx=e.clientX/window.innerWidth; ty=1-e.clientY/window.innerHeight; }, {passive:true});
+  function size(){ const d=Math.min(window.devicePixelRatio||1, window.matchMedia('(pointer:coarse)').matches?1:1.5);
+    cv.width=Math.floor(window.innerWidth*d); cv.height=Math.floor(window.innerHeight*d);
+    gl.viewport(0,0,cv.width,cv.height); }
+  size(); window.addEventListener('resize', size);
+  const t0=performance.now();
+  function frame(now){
+    gx=lerp(gx,tx,.04); gy=lerp(gy,ty,.04);
+    gl.uniform2f(uRes, cv.width, cv.height);
+    gl.uniform1f(uTime, (now-t0)/1000);
+    gl.uniform2f(uMouse, gx, gy);
+    gl.drawArrays(gl.TRIANGLES,0,3);
+    if(!RM) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+
+/* ============================================================
+   9. constellation — orbiting terminology chips + wireframe core
+   ============================================================ */
+(function(){
+  const orbit = document.getElementById('orbit');
+  if(!orbit) return;
+  const scene = orbit.closest('.scene') || orbit.parentElement;
+  const tags = ['Market access','ЖНВЛП','HTA','EAEU','Roszdravnadzor','eCTD','Dossier','Pharmacoeconomics',
+                'Budget impact','Cost-effectiveness','Registration','Localisation','CMO','Forecasting',
+                'Market sizing','Dashboards','Tenders / ЕИС','Customs data','Registries','Vigilance'];
+  const N = tags.length, R = 162, PERSP = 520;
+  const GA = Math.PI * (3 - Math.sqrt(5));
+  const pts = [];
+  for(let i=0;i<N;i++){
+    const y = 1 - (i/(N-1))*2;
+    const r = Math.sqrt(Math.max(0, 1 - y*y));
+    const th = i*GA;
+    const el = document.createElement('div'); el.className='chip'; el.textContent=tags[i];
+    orbit.appendChild(el);
+    pts.push({ x:Math.cos(th)*r*R, y:y*R, z:Math.sin(th)*r*R, el,
+               pulse:Math.random(), pspeed:0.004+Math.random()*0.006 });
+  }
+  const MESH=[], seen={};
+  for(let i=0;i<N;i++){
+    const dd=[];
+    for(let j=0;j<N;j++) if(j!==i){ const a=pts[i],b=pts[j];
+      dd.push([(a.x-b.x)**2+(a.y-b.y)**2+(a.z-b.z)**2, j]); }
+    dd.sort((p,q)=>p[0]-q[0]);
+    for(let k=0;k<2;k++){ const j=dd[k][1], key=i<j?i+'-'+j:j+'-'+i;
+      if(!seen[key]){ seen[key]=1; MESH.push([i,j]); } }
+  }
+  const cv=document.createElement('canvas'); cv.className='orbit-cv'; orbit.appendChild(cv);
+  const ctx=cv.getContext('2d'); let CW=0, CH=0;
+  const ccv=document.createElement('canvas'); ccv.id='coreCv'; orbit.appendChild(ccv);
+  const cctx=ccv.getContext('2d'); let CB=0;
+  const TS=38;
+  let tw=0;
+  function size(){
+    const dpr=Math.min(window.devicePixelRatio||1, window.matchMedia('(pointer:coarse)').matches?1:2);
+    const box=Math.round(R*3.2); CW=box; CH=box;
+    cv.width=box*dpr; cv.height=box*dpr; cv.style.width=box+'px'; cv.style.height=box+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    const cb=Math.round(R*2.0); CB=cb;
+    ccv.width=cb*dpr; ccv.height=cb*dpr; ccv.style.width=cb+'px'; ccv.style.height=cb+'px';
+    cctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  size(); window.addEventListener('resize', size);
+  const RINGS=[], SEG=46;
+  [-0.62,-0.32,0,0.32,0.62].forEach(s=>{
+    const y=s*R, rr=Math.sqrt(Math.max(0,1-s*s))*R, ring=[];
+    for(let j=0;j<SEG;j++){ const a=j/SEG*Math.PI*2; ring.push({x:Math.cos(a)*rr, y, z:Math.sin(a)*rr}); }
+    RINGS.push(ring);
+  });
+  for(let m=0;m<6;m++){
+    const lon=m/6*Math.PI, cl=Math.cos(lon), sl=Math.sin(lon), ring=[];
+    for(let j=0;j<SEG;j++){ const a=j/SEG*Math.PI*2, x=Math.cos(a)*R, y=Math.sin(a)*R;
+      ring.push({x:x*cl, y, z:-x*sl}); }
+    RINGS.push(ring);
+  }
+  let angY=0, tmx2=0, tmy2=0, mx=0, my=0;
+  if(scene && !window.matchMedia('(pointer:coarse)').matches){
+    scene.addEventListener('pointermove', e=>{ const b=scene.getBoundingClientRect();
+      tmx2=(e.clientX-b.left)/b.width-0.5; tmy2=(e.clientY-b.top)/b.height-0.5; });
+    scene.addEventListener('pointerleave', ()=>{ tmx2=0; tmy2=0; });
+  }
+  let cY=1,sY=0,cX=1,sX=0;
+  function rot(p){ const x1=p.x*cY+p.z*sY, z1=-p.x*sY+p.z*cY;
+    return { x:x1, y:p.y*cX - z1*sX, z:p.y*sX + z1*cX }; }
+  function ringPt(rad,inc,a){ const x=Math.cos(a)*rad, z0=Math.sin(a)*rad,
+    c=Math.cos(inc), s=Math.sin(inc); return { x, y:-z0*s, z:z0*c }; }
+
+  function project(){
+    mx += (tmx2-mx)*0.06; my += (tmy2-my)*0.06;
+    angY += 0.0038;
+    const rY=angY + mx*1.3, rX=0.30 + my*0.9;
+    cY=Math.cos(rY); sY=Math.sin(rY); cX=Math.cos(rX); sX=Math.sin(rX);
+    const cx=CW/2, cy=CH/2;
+    ctx.clearRect(0,0,CW,CH);
+    ctx.lineWidth=1;
+    for(const ring of RINGS){
+      for(let j=0;j<ring.length;j++){
+        const a=rot(ring[j]), b=rot(ring[(j+1)%ring.length]);
+        const pa=PERSP/(PERSP-a.z), pb=PERSP/(PERSP-b.z), da=(a.z+R)/(2*R);
+        ctx.strokeStyle='rgba(77,163,255,'+(0.05+da*0.20).toFixed(3)+')';
+        ctx.beginPath(); ctx.moveTo(cx+a.x*pa, cy+a.y*pa); ctx.lineTo(cx+b.x*pb, cy+b.y*pb); ctx.stroke();
+      }
+    }
+    const proj=[];
+    for(const p of pts){ const q=rot(p), pf=PERSP/(PERSP-q.z), d=(q.z+R)/(2*R);
+      proj.push({ p, q, pf, d, nx:cx+q.x*pf, ny:cy+q.y*pf }); }
+    for(const m of MESH){ const A=proj[m[0]], B=proj[m[1]], d=(A.d+B.d)/2;
+      ctx.strokeStyle='rgba(70,200,190,'+(0.03+d*0.15).toFixed(3)+')'; ctx.lineWidth=0.5+d*0.7;
+      ctx.beginPath(); ctx.moveTo(A.nx,A.ny); ctx.lineTo(B.nx,B.ny); ctx.stroke(); }
+    for(const P of proj){
+      const p=P.p, q=P.q, pf=P.pf, d=P.d, nx=P.nx, ny=P.ny;
+      ctx.strokeStyle='rgba(70,200,190,'+(0.04+d*0.24).toFixed(3)+')'; ctx.lineWidth=0.6+d*1.0;
+      ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(nx,ny); ctx.stroke();
+      p.pulse+=p.pspeed; if(p.pulse>1) p.pulse-=1;
+      const f=p.pulse, ex=cx+(nx-cx)*f, ey=cy+(ny-cy)*f;
+      ctx.beginPath(); ctx.arc(ex,ey, 1.0+d*1.5, 0, 6.2832);
+      ctx.fillStyle='rgba(225,240,255,'+(0.20+d*0.5).toFixed(3)+')'; ctx.fill();
+      ctx.beginPath(); ctx.arc(nx,ny, 1.3+d*2.2, 0, 6.2832);
+      ctx.fillStyle='rgba(180,214,255,'+(0.20+d*0.66).toFixed(3)+')';
+      ctx.shadowBlur=d>0.55?10*d:0; ctx.shadowColor='rgba(77,163,255,.9)'; ctx.fill(); ctx.shadowBlur=0;
+      const s=0.5+d*0.95, st=p.el.style;
+      st.transform=`translate(-50%,-50%) translate(${(q.x*pf).toFixed(1)}px,${(q.y*pf).toFixed(1)}px) scale(${s.toFixed(3)})`;
+      st.opacity=(0.18+d*0.82).toFixed(3);
+      st.filter=d<0.5?`blur(${((0.5-d)*2.4).toFixed(2)}px)`:'none';
+      st.zIndex=(10+Math.round(d*100));
+    }
+    tw += 0.01;
+    const ccx=CB/2;
+    cctx.clearRect(0,0,CB,CB);
+    const flick=0.85+0.10*Math.sin(tw*6.3);
+    const gr=cctx.createRadialGradient(ccx,ccx,0, ccx,ccx, TS*2.3*flick);
+    gr.addColorStop(0,'rgba(225,240,255,0.5)');
+    gr.addColorStop(0.18,'rgba(180,214,255,0.34)');
+    gr.addColorStop(0.5,'rgba(77,163,255,0.12)');
+    gr.addColorStop(1,'rgba(77,163,255,0)');
+    cctx.fillStyle=gr; cctx.beginPath(); cctx.arc(ccx,ccx,TS*2.3*flick,0,6.2832); cctx.fill();
+    const RH=TS*2.9;
+    cctx.save(); cctx.translate(ccx,ccx); cctx.rotate(tw*0.4);
+    cctx.beginPath();
+    for(let k=0;k<=6;k++){ const a=k/6*6.2832, X=Math.cos(a)*RH, Y=Math.sin(a)*RH; if(k) cctx.lineTo(X,Y); else cctx.moveTo(X,Y); }
+    cctx.strokeStyle='rgba(77,163,255,0.30)'; cctx.lineWidth=1.4; cctx.stroke();
+    for(let k=0;k<6;k++){ const a=k/6*6.2832, ca=Math.cos(a), sa=Math.sin(a);
+      cctx.beginPath(); cctx.moveTo(ca*RH*0.84, sa*RH*0.84); cctx.lineTo(ca*RH*1.13, sa*RH*1.13);
+      cctx.strokeStyle='rgba(77,163,255,0.45)'; cctx.lineWidth=3; cctx.stroke();
+      cctx.beginPath(); cctx.arc(ca*RH*1.13, sa*RH*1.13, 2.2, 0, 6.2832);
+      cctx.fillStyle='rgba(225,240,255,0.88)';
+      cctx.shadowBlur=6; cctx.shadowColor='rgba(77,163,255,.9)'; cctx.fill(); cctx.shadowBlur=0; }
+    cctx.rotate(-tw*0.96);
+    cctx.setLineDash([4,7]); cctx.beginPath(); cctx.arc(0,0, RH*0.64, 0, 6.2832);
+    cctx.strokeStyle='rgba(70,200,190,0.38)'; cctx.lineWidth=1; cctx.stroke(); cctx.setLineDash([]);
+    cctx.restore();
+  }
+  if(RM){ project(); }
+  else {
+    let rafO = 0;
+    const loop = ()=>{ project(); rafO = requestAnimationFrame(loop); };
+    const io3 = new IntersectionObserver(es=>{
+      if(es[0].isIntersecting){ if(!rafO) rafO = requestAnimationFrame(loop); }
+      else if(rafO){ cancelAnimationFrame(rafO); rafO = 0; }
+    }, {rootMargin:'200px'});
+    io3.observe(scene);
+  }
+})();
+
+/* ============================================================
+   10. Contact — copy email (clipboard + feedback)
+   ============================================================ */
+(function(){
+  const cp=document.getElementById('copyEmail'), msg=document.getElementById('copyMsg');
+  if(cp){
+    let tmr;
+    cp.addEventListener('click', async ()=>{
+      const email=cp.dataset.email||''; let ok=false;
+      try{ await navigator.clipboard.writeText(email); ok=true; }catch(e){ ok=false; }
+      if(msg){
+        const d = TR[LANG] || TR.en;
+        msg.textContent = ok ? (d.copied+'  '+email+'  ✓') : (d.copyfail+email);
+        msg.classList.add('show');
+        clearTimeout(tmr); tmr=setTimeout(()=> msg.classList.remove('show'), 3000);
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
