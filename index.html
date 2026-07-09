@@ -3,39 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ИП Митрохин Е.М. — Market Access, Regulatory &amp; Documentation · Russia / EAEU</title>
+<title>Eugene Mitrokhin — Market Access, Regulatory &amp; Documentation · Russia / EAEU</title>
 <meta name="description" content="Independent Moscow-based advisory for pharmaceutical and medical-device companies: regulatory affairs, pharmacoeconomics & HTA, market analytics and market access across Russia / EAEU — backed by financial modelling and software-delivery consulting. Active since 2019.">
 <meta name="theme-color" content="#00040a">
-<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN.com/">
+<link rel="canonical" href="https://mitrokhin.online/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23000000'/><path d='M10 10l6 6-6 6' fill='none' stroke='%234da3ff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/><path d='M18 22h5' stroke='%235be3c6' stroke-width='2.4' stroke-linecap='round'/></svg>">
 
-<!-- Social share — replace REPLACE-WITH-YOUR-DOMAIN.com and add og-card.png (1200x630) before publishing -->
+<!-- Social share — mitrokhin.online · og-card.png (1200x630) served from repo root -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="ИП Митрохин Е.М. — Consulting practice">
-<meta property="og:title" content="ИП Митрохин Е.М. — Market Access & Regulatory Affairs · Russia / EAEU">
+<meta property="og:site_name" content="Eugene Mitrokhin — Consulting practice">
+<meta property="og:title" content="Eugene Mitrokhin — Market Access & Regulatory Affairs · Russia / EAEU">
 <meta property="og:description" content="Independent advisory for pharma & medical-device companies: regulatory documentation, pharmacoeconomics & HTA, market analytics and market access across Russia / EAEU.">
-<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN.com/">
-<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN.com/og-card.png">
+<meta property="og:url" content="https://mitrokhin.online/">
+<meta property="og:image" content="https://mitrokhin.online/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ИП Митрохин Е.М. — Market Access & Regulatory Affairs">
+<meta name="twitter:title" content="Eugene Mitrokhin — Market Access & Regulatory Affairs">
 <meta name="twitter:description" content="Independent advisory for pharma & medical-device market access across Russia / EAEU. Moscow, since 2019.">
-<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN.com/og-card.png">
+<meta name="twitter:image" content="https://mitrokhin.online/og-card.png">
 
 <script type="application/ld+json">
 { "@context":"https://schema.org", "@type":"ProfessionalService",
-  "name":"ИП Митрохин Е.М. — Consulting practice",
+  "name":"Eugene Mitrokhin — Consulting practice",
+  "alternateName":"ИП Митрохин Е.М.",
   "description":"Independent advisory for pharmaceutical and medical-device companies: regulatory affairs, pharmacoeconomics & HTA, market analytics and market access across Russia / EAEU — backed by financial modelling and software-delivery consulting.",
-  "email":"evgeniy.mitrokhin@gmail.com",
   "areaServed":["RU","EAEU"],
-  "founder":{"@type":"Person","name":"Evgeniy Mitrokhin"},
+  "founder":{"@type":"Person","name":"Eugene Mitrokhin"},
   "foundingDate":"2019",
   "address":{"@type":"PostalAddress","addressLocality":"Moscow","addressCountry":"RU"},
   "knowsLanguage":["en","ru"],
   "taxID":"773433517310",
   "identifier":{"@type":"PropertyValue","propertyID":"ОГРНИП","value":"319774600252261"},
-  "url":"https://REPLACE-WITH-YOUR-DOMAIN.com/",
+  "url":"https://mitrokhin.online/",
   "knowsAbout":["Regulatory affairs","Market access","Pharmacoeconomics","HTA","Medical device registration","Pharmaceutical dossiers","EAEU","ЖНВЛП","Market analytics","Financial modelling","Software delivery","Data engineering"] }
 </script>
 <style>
@@ -410,6 +410,59 @@ main:focus{outline:none}
 .btn-primary svg{transition:transform .18s var(--ease)}
 .btn-primary:hover svg{transform:translateX(3px)}
 .print-only{display:none}
+
+/* ============================================================
+   DECOR  —  film grain · ECG pulse dividers · domain ticker · corner ticks
+   ============================================================ */
+/* film grain — subtle filmic texture over the whole page */
+.grain{position:fixed; inset:0; z-index:44; pointer-events:none; opacity:.05; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:150px 150px}
+
+/* ECG / clinical pulse-line divider */
+.pulse-divider{position:relative; padding-block:8px; overflow:hidden}
+.pulse-divider .wrap{padding-block:0}
+.ecg{display:block; width:100%; height:46px; overflow:visible}
+.ecg path{fill:none; vector-effect:non-scaling-stroke; stroke-linecap:round; stroke-linejoin:round}
+.ecg .ecg-base{stroke:rgba(77,163,255,.14); stroke-width:1.3}
+.ecg .ecg-scan{stroke:url(#ecgGrad); stroke-width:2.1;
+  filter:drop-shadow(0 0 5px rgba(77,163,255,.85)) drop-shadow(0 0 12px rgba(91,227,198,.35));
+  stroke-dasharray:56 944; stroke-dashoffset:1000; animation:ecgScan 4.8s linear infinite}
+@keyframes ecgScan{to{stroke-dashoffset:0}}
+
+/* domain-terminology ticker */
+.ticker{position:relative; overflow:hidden; border-block:1px solid var(--glass-border);
+  background:linear-gradient(90deg,rgba(77,163,255,.055),rgba(91,227,198,.04));
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.ticker-track{display:flex; width:max-content; will-change:transform; animation:tickerMove 52s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-grp{display:flex; align-items:center; padding-block:12px; font-family:var(--font-mono);
+  font-size:12px; letter-spacing:.13em; text-transform:uppercase; white-space:nowrap}
+.ticker-grp b{color:var(--muted); font-weight:500; margin-inline:16px}
+.ticker-grp i{color:var(--accent); font-style:normal; font-size:8px; transform:translateY(-1px)}
+@keyframes tickerMove{to{transform:translateX(-50%)}}
+
+/* instrument-style corner registration ticks on feature panels */
+.corner-ticks::after{content:""; position:absolute; inset:9px; pointer-events:none; z-index:4;
+  --tk:rgba(120,180,255,.42); --tl:15px;
+  background:
+    linear-gradient(var(--tk),var(--tk)) left top/var(--tl) 1px no-repeat,
+    linear-gradient(var(--tk),var(--tk)) left top/1px var(--tl) no-repeat,
+    linear-gradient(var(--tk),var(--tk)) right top/var(--tl) 1px no-repeat,
+    linear-gradient(var(--tk),var(--tk)) right top/1px var(--tl) no-repeat,
+    linear-gradient(var(--tk),var(--tk)) left bottom/var(--tl) 1px no-repeat,
+    linear-gradient(var(--tk),var(--tk)) left bottom/1px var(--tl) no-repeat,
+    linear-gradient(var(--tk),var(--tk)) right bottom/var(--tl) 1px no-repeat,
+    linear-gradient(var(--tk),var(--tk)) right bottom/1px var(--tl) no-repeat}
+
+/* footer sign-off pulse */
+.foot-ecg{display:block; width:min(300px,62vw); height:24px; margin:2px auto 20px; overflow:visible; opacity:.85}
+
+@media(max-width:540px){
+  .ecg{height:34px}
+  .ticker-grp{font-size:11px; padding-block:10px}
+}
 </style>
 </head>
 <body>
@@ -423,12 +476,13 @@ main:focus{outline:none}
 <div class="orb b" data-par=".7"></div>
 <div class="scrim"></div>
 <div class="spot" id="spot"></div>
+<div class="grain" aria-hidden="true"></div>
 <div class="progress" id="progress"></div>
 
 <!-- NAV ------------------------------------------------------------ -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a class="brand" href="#top"><b></b>ИП&nbsp;МИТРОХИН&nbsp;Е.М.&nbsp;<span style="color:var(--muted)">//&nbsp;<span data-i18n="brandTag">market access</span></span></a>
+    <a class="brand" href="#top"><b></b><span data-i18n="brandName">Eugene&nbsp;Mitrokhin</span>&nbsp;<span style="color:var(--muted)">//&nbsp;<span data-i18n="brandTag">entrepreneur</span></span></a>
     <div class="nav-links">
       <a href="#practice" data-i18n="navPractice">Practice</a>
       <a href="#services" data-i18n="navServices">Services</a>
@@ -466,7 +520,7 @@ main:focus{outline:none}
         </div>
       </div>
 
-      <div class="hud glass" id="hud">
+      <div class="hud glass corner-ticks" id="hud">
         <p class="hud-h" data-i18n="hudHead">// focus areas</p>
         <div class="hud-row"><span data-i18n="hudA">Regulatory affairs</span><b>RU / EAEU</b></div>
         <div class="hud-row"><span data-i18n="hudB">Pharmacoeconomics · HTA</span><span class="dot-line"><i></i><i></i><i></i></span></div>
@@ -482,6 +536,21 @@ main:focus{outline:none}
 
 <main id="main" tabindex="-1">
 
+<!-- ECG PULSE DIVIDER ---------------------------------------------- -->
+<div class="pulse-divider" aria-hidden="true">
+  <div class="wrap">
+    <svg class="ecg" viewBox="0 0 1278 46" preserveAspectRatio="none" role="presentation">
+      <defs>
+        <linearGradient id="ecgGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#4da3ff"/><stop offset=".5" stop-color="#8fd0ff"/><stop offset="1" stop-color="#5be3c6"/>
+        </linearGradient>
+      </defs>
+      <path class="ecg-base" d="M0 23 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44"/>
+      <path class="ecg-scan" pathLength="1000" d="M0 23 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44"/>
+    </svg>
+  </div>
+</div>
+
 <!-- PRACTICE ------------------------------------------------------- -->
 <section id="practice">
   <div class="wrap">
@@ -493,7 +562,7 @@ main:focus{outline:none}
         <p data-i18n-html="practiceP2">Every recommendation is framed in evidence a payer or regulator can act on — with <strong>international research channels</strong> (including Singapore / ASEAN) available where a question reaches beyond the region.</p>
       </div>
 
-      <div class="now-card glass reveal" data-d="2">
+      <div class="now-card glass corner-ticks reveal" data-d="2">
         <p class="eyebrow" data-i18n="ebGlance">At a glance</p>
         <div class="now-list">
           <div class="now-item">
@@ -567,7 +636,7 @@ main:focus{outline:none}
       </div>
     </div>
 
-    <div class="diff glass reveal" data-d="2">
+    <div class="diff glass corner-ticks reveal" data-d="2">
       <span class="badge" data-i18n="diffBadge">Distinctive competence</span>
       <div>
         <h3 data-i18n="diffH">Digital analytics at the IT × healthcare intersection</h3>
@@ -603,6 +672,14 @@ main:focus{outline:none}
     </div>
   </div>
 </section>
+
+<!-- DOMAIN TICKER -------------------------------------------------- -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-grp"><b>Market access</b><i>◆</i><b>Pharmacoeconomics</b><i>◆</i><b>HTA</b><i>◆</i><b>Budget-impact</b><i>◆</i><b>Cost-effectiveness</b><i>◆</i><b>eCTD dossiers</b><i>◆</i><b>Device registration</b><i>◆</i><b>Localisation</b><i>◆</i><b>Pharmacovigilance</b><i>◆</i><b>Forecasting</b><i>◆</i><b>Tenders / ЕИС</b><i>◆</i><b>Customs analytics</b><i>◆</i><b>Open registries</b><i>◆</i><b>EAEU</b><i>◆</i><b>Roszdravnadzor</b><i>◆</i></span>
+    <span class="ticker-grp"><b>Market access</b><i>◆</i><b>Pharmacoeconomics</b><i>◆</i><b>HTA</b><i>◆</i><b>Budget-impact</b><i>◆</i><b>Cost-effectiveness</b><i>◆</i><b>eCTD dossiers</b><i>◆</i><b>Device registration</b><i>◆</i><b>Localisation</b><i>◆</i><b>Pharmacovigilance</b><i>◆</i><b>Forecasting</b><i>◆</i><b>Tenders / ЕИС</b><i>◆</i><b>Customs analytics</b><i>◆</i><b>Open registries</b><i>◆</i><b>EAEU</b><i>◆</i><b>Roszdravnadzor</b><i>◆</i></span>
+  </div>
+</div>
 
 <!-- METHOD --------------------------------------------------------- -->
 <section id="method">
@@ -682,18 +759,18 @@ main:focus{outline:none}
 <!-- CONTACT -------------------------------------------------------- -->
 <section id="contact">
   <div class="wrap">
-    <div class="contact glass reveal">
+    <div class="contact glass corner-ticks reveal">
       <p class="eyebrow" style="justify-content:center" data-i18n="ebContact">Let's talk</p>
       <h2 data-i18n-html="contactH">Discuss your <span class="grad">market-access needs.</span></h2>
       <p data-i18n="contactP">Registration, dossiers, HTA evidence, market analytics, or documentation that has to hold up under review — I'm easy to reach.</p>
       <div class="cta-row">
-        <button class="btn btn-primary" type="button" id="copyEmail" data-email="evgeniy.mitrokhin@gmail.com">
+        <button class="btn btn-primary" type="button" id="copyEmail">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
           <span data-i18n="ctaCopy">Copy email</span>
         </button>
-        <a class="btn" href="mailto:evgeniy.mitrokhin@gmail.com">
+        <a class="btn" id="mailLink" data-e64="ZXZnZW5peS5taXRyb2toaW5AZ21haWwuY29t" href="#contact" rel="nofollow noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          evgeniy.mitrokhin@gmail.com
+          <span id="mailText" data-i18n="ctaWrite">Write email</span>
         </a>
       </div>
       <p class="copy-msg" id="copyMsg" aria-live="polite"></p>
@@ -712,7 +789,11 @@ main:focus{outline:none}
 </main>
 
 <footer>
-  <span><b></b>ИП Митрохин Е.М. · <span data-i18n="footTag">Market access · Russia / EAEU</span></span><br>
+  <svg class="ecg foot-ecg" viewBox="0 0 426 46" preserveAspectRatio="none" aria-hidden="true" role="presentation">
+    <path class="ecg-base" d="M0 23 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44"/>
+    <path class="ecg-scan" pathLength="1000" d="M0 23 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44 h44 q16 -7 32 0 h20 l7 4 l6 -24 l8 36 l6 -16 h16 q15 -9 30 0 h44"/>
+  </svg>
+  <span><b></b><span data-i18n="footName">Eugene Mitrokhin, entrepreneur</span> · <span data-i18n="footTag">Market access · Russia / EAEU</span></span><br>
   <span data-i18n="footLegal">ОГРНИП 319774600252261 · ИНН 773433517310 · Moscow</span> · <span id="year"></span>
 </footer>
 
@@ -730,10 +811,10 @@ document.getElementById('year').textContent = new Date().getFullYear();
    ============================================================ */
 const TR = {
   en: {
-    _title: "ИП Митрохин Е.М. — Market Access, Regulatory & Documentation · Russia / EAEU",
+    _title: "Eugene Mitrokhin — Market Access, Regulatory & Documentation · Russia / EAEU",
     _desc: "Independent Moscow-based advisory for pharmaceutical and medical-device companies: regulatory affairs, pharmacoeconomics & HTA, market analytics and market access across Russia / EAEU — backed by financial modelling and software-delivery consulting. Active since 2019.",
     skip: "Skip to content",
-    brandTag: "market access",
+    brandName: "Eugene Mitrokhin", brandTag: "entrepreneur", footName: "Eugene Mitrokhin, entrepreneur",
     navPractice: "Practice", navServices: "Services", navMethod: "Method", navTrack: "Track record", navContact: "Contact",
     heroStatus: "Independent practice · Moscow · since 2019",
     heroKicker: "Pharmaceuticals · Medical devices",
@@ -793,7 +874,7 @@ const TR = {
     ebContact: "Let's talk",
     contactH: 'Discuss your <span class="grad">market-access needs.</span>',
     contactP: "Registration, dossiers, HTA evidence, market analytics, or documentation that has to hold up under review — I'm easy to reach.",
-    ctaCopy: "Copy email",
+    ctaCopy: "Copy email", ctaWrite: "Write email",
     idName: "Entity", idLoc: "Location", idLocv: "Moscow, RF",
     footTag: "Market access · Russia / EAEU",
     footLegal: "ОГРНИП 319774600252261 · ИНН 773433517310 · Moscow",
@@ -803,7 +884,7 @@ const TR = {
     _title: "ИП Митрохин Е.М. — Market access, регуляторика и документация · РФ / ЕАЭС",
     _desc: "Независимая московская практика для фарм- и медтех-компаний: регуляторное сопровождение, фармакоэкономика и HTA, аналитика рынка и market access на территории РФ / ЕАЭС — плюс финансовое моделирование и консалтинг в разработке ПО. С 2019 года.",
     skip: "Перейти к содержанию",
-    brandTag: "market access",
+    brandName: "ИП Митрохин Е.М.", brandTag: "market access", footName: "ИП Митрохин Е.М.",
     navPractice: "Практика", navServices: "Услуги", navMethod: "Подход", navTrack: "Опыт", navContact: "Контакты",
     heroStatus: "Независимая практика · Москва · с 2019",
     heroKicker: "Лекарственные средства · Медизделия",
@@ -863,7 +944,7 @@ const TR = {
     ebContact: "Свяжитесь",
     contactH: 'Обсудим ваши <span class="grad">задачи market access.</span>',
     contactP: "Регистрация, досье, HTA-доказательства, аналитика рынка или документация, которая должна выдержать проверку — со мной легко связаться.",
-    ctaCopy: "Скопировать e-mail",
+    ctaCopy: "Скопировать e-mail", ctaWrite: "Написать письмо",
     idName: "Субъект", idLoc: "Локация", idLocv: "Москва, РФ",
     footTag: "Market access · РФ / ЕАЭС",
     footLegal: "ОГРНИП 319774600252261 · ИНН 773433517310 · Москва",
@@ -1280,7 +1361,11 @@ if(!RM && !window.matchMedia('(pointer:coarse)').matches) document.querySelector
    10. Contact — copy email (clipboard + feedback)
    ============================================================ */
 (function(){
-  const cp=document.getElementById('copyEmail'), msg=document.getElementById('copyMsg');
+  const cp=document.getElementById('copyEmail'), msg=document.getElementById('copyMsg'), link=document.getElementById('mailLink');
+  // assemble the address at runtime — kept out of the static HTML (base64) to deter scrapers
+  let addr=''; const enc=(link && link.dataset.e64)||'';
+  if(enc){ try{ addr=atob(enc); }catch(e){ addr=''; } }
+  if(addr){ if(link) link.href='mailto:'+addr; if(cp) cp.dataset.email=addr; }
   if(cp){
     let tmr;
     cp.addEventListener('click', async ()=>{
