@@ -463,6 +463,69 @@ main:focus{outline:none}
   .ecg{height:34px}
   .ticker-grp{font-size:11px; padding-block:10px}
 }
+
+/* ============================================================
+   HUD telemetry console · stat band · section progress rail
+   ============================================================ */
+.hud-h{display:flex; align-items:center; justify-content:space-between; gap:10px; position:relative; z-index:2}
+.hud-live{display:inline-flex; align-items:center; gap:7px; font-family:var(--font-mono)}
+.hud-live i{width:6px;height:6px;border-radius:50%;background:var(--accent-2);
+  box-shadow:0 0 8px var(--accent-2); animation:pulse 2.4s infinite}
+.hud-live b{color:var(--muted); font-weight:600; font-size:10.5px; letter-spacing:.1em}
+.hud-row{position:relative; z-index:2}
+.hud-row{font-size:13.5px}
+.hud-k{display:inline-flex; align-items:center; gap:9px; min-width:0; flex:1 1 auto}
+.hud-k>span{color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.hud-i{font-family:var(--font-mono); font-size:10px; color:var(--faint); font-style:normal; letter-spacing:.05em;
+  opacity:.85; flex:0 0 auto}
+.hud-v{display:inline-flex; align-items:center; gap:8px; flex:0 0 auto}
+.hud-v b{font-weight:600; font-family:var(--font-mono); font-size:12px; color:var(--accent)}
+.eq{display:inline-flex; align-items:flex-end; gap:1.6px; height:12px; flex:0 0 auto}
+.eq i{width:2px; border-radius:1px; height:45%; background:linear-gradient(to top,var(--accent),var(--accent-2))}
+.eq i{animation:eqbounce 1.15s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.16s} .eq i:nth-child(3){animation-delay:.34s} .eq i:nth-child(4){animation-delay:.52s}
+@keyframes eqbounce{0%,100%{height:22%;opacity:.5}50%{height:100%;opacity:1}}
+.hud-scan{position:absolute; left:0; right:0; top:0; height:42%; pointer-events:none; z-index:1;
+  background:linear-gradient(180deg,transparent,rgba(77,163,255,.10) 50%,transparent);
+  animation:hudscan 6s ease-in-out infinite}
+@keyframes hudscan{0%{transform:translateY(-70%);opacity:0}14%{opacity:1}52%{transform:translateY(200%);opacity:1}64%,100%{opacity:0;transform:translateY(200%)}}
+.hud-foot{margin:16px 0 0; padding-top:14px; position:relative; z-index:2;
+  border-top:1px solid rgba(77,163,255,.10); font-family:var(--font-mono); font-size:10.5px;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--faint)}
+
+/* stat band */
+.statband{border-block:1px solid var(--glass-border);
+  background:linear-gradient(180deg,rgba(77,163,255,.05),rgba(2,5,10,0))}
+.statband .wrap{padding-block:0}
+.stats{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--glass-border);
+  border-inline:1px solid var(--glass-border)}
+.stat{position:relative; text-align:center; padding:clamp(26px,4vw,46px) 16px;
+  background:rgba(4,9,16,.72); -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px)}
+.stat-n{display:block; font-family:var(--font-display); font-weight:720; letter-spacing:-.02em; line-height:1;
+  font-size:clamp(30px,4.4vw,52px);
+  background:linear-gradient(120deg,#e4f0ff,var(--accent) 55%,var(--accent-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  text-shadow:0 0 34px rgba(77,163,255,.18); font-variant-numeric:tabular-nums}
+.stat-l{display:block; margin-top:11px; font-family:var(--font-mono); font-size:11px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--faint)}
+@media(max-width:640px){ .stats{grid-template-columns:repeat(2,1fr)} }
+
+/* section progress rail */
+.rail{position:fixed; right:18px; top:50%; transform:translateY(-50%); z-index:45;
+  display:flex; flex-direction:column; gap:15px; align-items:center}
+.rail a{position:relative; display:block; padding:4px; line-height:0}
+.rail a i{display:block; width:8px; height:8px; border-radius:50%; background:transparent;
+  border:1px solid var(--glass-hi); transition:.3s var(--ease)}
+.rail a:hover i{border-color:var(--accent); box-shadow:0 0 10px rgba(77,163,255,.6)}
+.rail a.active i{background:linear-gradient(135deg,var(--accent),var(--accent-2)); border-color:transparent;
+  box-shadow:0 0 12px rgba(77,163,255,.85); transform:scale(1.3)}
+.rail a::after{content:attr(data-rail); position:absolute; right:22px; top:50%;
+  transform:translateY(-50%) translateX(6px); white-space:nowrap; opacity:0; pointer-events:none;
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--fg);
+  padding:5px 10px; border-radius:8px; background:rgba(5,10,16,.9); border:1px solid var(--glass-border);
+  box-shadow:0 10px 24px -12px rgba(0,0,0,.8); transition:.25s var(--ease)}
+.rail a:hover::after{opacity:1; transform:translateY(-50%) translateX(0)}
+@media(max-width:980px){ .rail{display:none} }
 </style>
 </head>
 <body>
@@ -497,6 +560,16 @@ main:focus{outline:none}
   </div>
 </nav>
 
+<!-- SECTION PROGRESS RAIL ------------------------------------------ -->
+<nav class="rail" id="rail" aria-label="Section progress">
+  <a href="#top" data-rail="Top" aria-label="Top"><i></i></a>
+  <a href="#practice" data-rail="Practice" aria-label="Practice"><i></i></a>
+  <a href="#services" data-rail="Services" aria-label="Services"><i></i></a>
+  <a href="#method" data-rail="Method" aria-label="Method"><i></i></a>
+  <a href="#track" data-rail="Track record" aria-label="Track record"><i></i></a>
+  <a href="#contact" data-rail="Contact" aria-label="Contact"><i></i></a>
+</nav>
+
 <!-- HERO ----------------------------------------------------------- -->
 <header class="hero" id="top">
   <canvas id="net"></canvas>
@@ -521,13 +594,36 @@ main:focus{outline:none}
       </div>
 
       <div class="hud glass corner-ticks" id="hud">
-        <p class="hud-h" data-i18n="hudHead">// focus areas</p>
-        <div class="hud-row"><span data-i18n="hudA">Regulatory affairs</span><b>RU / EAEU</b></div>
-        <div class="hud-row"><span data-i18n="hudB">Pharmacoeconomics · HTA</span><span class="dot-line"><i></i><i></i><i></i></span></div>
-        <div class="hud-row"><span data-i18n="hudC">Market analytics</span><b data-i18n="hudCv">data-driven</b></div>
-        <div class="hud-row"><span data-i18n="hudD">Documentation · RU ↔ EN</span><b data-i18n="hudDv">audit-ready</b></div>
-        <div class="hud-row"><span data-i18n="hudE">Public affairs</span><b data-i18n="hudEv">compliant</b></div>
-        <div class="hud-row"><span data-i18n="hudF">Finance · software delivery</span><b data-i18n="hudFv">second track</b></div>
+        <span class="hud-scan" aria-hidden="true"></span>
+        <p class="hud-h">
+          <span data-i18n="hudHead">// focus areas</span>
+          <span class="hud-live"><i></i><b id="hudClock">MSK&nbsp;··:··</b></span>
+        </p>
+        <div class="hud-row">
+          <span class="hud-k"><em class="hud-i">01</em><span data-i18n="hudA">Regulatory affairs</span></span>
+          <span class="hud-v"><b>RU / EAEU</b><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
+        </div>
+        <div class="hud-row">
+          <span class="hud-k"><em class="hud-i">02</em><span data-i18n="hudB">Pharmacoeconomics · HTA</span></span>
+          <span class="hud-v"><b data-i18n="hudBv">CEA / BIA</b><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
+        </div>
+        <div class="hud-row">
+          <span class="hud-k"><em class="hud-i">03</em><span data-i18n="hudC">Market analytics</span></span>
+          <span class="hud-v"><b data-i18n="hudCv">data-driven</b><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
+        </div>
+        <div class="hud-row">
+          <span class="hud-k"><em class="hud-i">04</em><span data-i18n="hudD">Documentation · RU ↔ EN</span></span>
+          <span class="hud-v"><b data-i18n="hudDv">audit-ready</b><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
+        </div>
+        <div class="hud-row">
+          <span class="hud-k"><em class="hud-i">05</em><span data-i18n="hudE">Public affairs</span></span>
+          <span class="hud-v"><b data-i18n="hudEv">compliant</b><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
+        </div>
+        <div class="hud-row">
+          <span class="hud-k"><em class="hud-i">06</em><span data-i18n="hudF">Finance · software</span></span>
+          <span class="hud-v"><b data-i18n="hudFv">second track</b><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
+        </div>
+        <p class="hud-foot"><span data-i18n="hudFoot">6 focus areas · RU / EAEU · since 2019</span></p>
       </div>
     </div>
   </div>
@@ -590,6 +686,18 @@ main:focus{outline:none}
     </div>
   </div>
 </section>
+
+<!-- STAT BAND ------------------------------------------------------ -->
+<div class="statband">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><span class="stat-n" data-count="2019">2019</span><span class="stat-l" data-i18n="stat1">Practising since</span></div>
+      <div class="stat reveal" data-d="1"><span class="stat-n" data-count="10">10</span><span class="stat-l" data-i18n="stat2">Service lines</span></div>
+      <div class="stat reveal" data-d="2"><span class="stat-n" data-count="2">2</span><span class="stat-l" data-i18n="stat3">Delivery tracks</span></div>
+      <div class="stat reveal" data-d="3"><span class="stat-n">RU · EN</span><span class="stat-l" data-i18n="stat4">Working languages</span></div>
+    </div>
+  </div>
+</div>
 
 <!-- SERVICES ------------------------------------------------------- -->
 <section id="services">
@@ -823,10 +931,12 @@ const TR = {
     heroSub: "An independent Moscow-based advisory helping pharmaceutical and medical-device companies with regulatory documentation, pharmacoeconomic evidence, market analytics and market entry across Russia and the EAEU — active since 2019.",
     ctaServices: "View services", ctaContact: "Contact",
     hudHead: "// focus areas",
-    hudA: "Regulatory affairs", hudB: "Pharmacoeconomics · HTA", hudC: "Market analytics", hudCv: "data-driven",
+    hudA: "Regulatory affairs", hudB: "Pharmacoeconomics · HTA", hudBv: "CEA / BIA", hudC: "Market analytics", hudCv: "data-driven",
     hudD: "Documentation · RU ↔ EN", hudDv: "audit-ready", hudE: "Public affairs", hudEv: "compliant",
-    hudF: "Finance · software delivery", hudFv: "second track",
+    hudF: "Finance · software", hudFv: "second track",
+    hudFoot: "6 focus areas · RU / EAEU · since 2019",
     scroll: "scroll",
+    stat1: "Practising since", stat2: "Service lines", stat3: "Delivery tracks", stat4: "Working languages",
     ebPractice: "The practice",
     practiceH: 'Independent advisory for <span class="grad">life-sciences market access.</span>',
     practiceP1: "A Moscow-based independent consulting practice, active <strong>since 2019</strong>, supporting pharmaceutical and medical-device companies on <strong>commercial strategy, regulatory documentation, pharmacoeconomic evidence</strong> and <strong>market access</strong> across Russia and the EAEU.",
@@ -893,10 +1003,12 @@ const TR = {
     heroSub: "Независимая московская практика: помогаю фарм- и медтех-компаниям с регуляторной документацией, фармакоэкономическими данными, аналитикой рынка и выводом продукции на рынок РФ и ЕАЭС — с 2019 года.",
     ctaServices: "Смотреть услуги", ctaContact: "Контакты",
     hudHead: "// направления",
-    hudA: "Регуляторика", hudB: "Фармакоэкономика · HTA", hudC: "Аналитика рынка", hudCv: "на данных",
+    hudA: "Регуляторика", hudB: "Фармакоэкономика · HTA", hudBv: "CEA / BIA", hudC: "Аналитика рынка", hudCv: "на данных",
     hudD: "Документация · RU ↔ EN", hudDv: "под аудит", hudE: "GR / public affairs", hudEv: "комплаенс",
     hudF: "Финансы · разработка ПО", hudFv: "второй трек",
+    hudFoot: "6 направлений · РФ / ЕАЭС · с 2019",
     scroll: "листайте",
+    stat1: "Практикую с", stat2: "Линий услуг", stat3: "Трека работы", stat4: "Рабочих языка",
     ebPractice: "Практика",
     practiceH: 'Независимое сопровождение <span class="grad">market access в life-sciences.</span>',
     practiceP1: "Независимая консалтинговая практика в Москве, работает <strong>с 2019 года</strong>. Поддержка фарм- и медтех-компаний по вопросам <strong>коммерческой стратегии, регуляторной документации, фармакоэкономических данных</strong> и <strong>market access</strong> на территории РФ и ЕАЭС.",
@@ -1379,6 +1491,47 @@ if(!RM && !window.matchMedia('(pointer:coarse)').matches) document.querySelector
       }
     });
   }
+})();
+
+/* ============================================================
+   11. HUD live clock (Moscow) · stat count-up · section rail
+   ============================================================ */
+(function(){ // live Moscow time in the telemetry console
+  const el=document.getElementById('hudClock'); if(!el) return;
+  function tick(){
+    try{ const t=new Date().toLocaleTimeString('en-GB',{timeZone:'Europe/Moscow',hour:'2-digit',minute:'2-digit',hour12:false});
+      el.textContent='MSK '+t; }catch(e){ el.textContent='MSK'; }
+  }
+  tick(); if(!RM) setInterval(tick, 15000);
+})();
+
+(function(){ // count-up stat figures when they scroll into view
+  const nums=Array.prototype.slice.call(document.querySelectorAll('.stat-n[data-count]'));
+  if(!nums.length) return;
+  function run(el){
+    const target=parseInt(el.dataset.count,10)||0;
+    if(RM){ el.textContent=String(target); return; }
+    const dur=1150, t0=performance.now();
+    (function step(now){
+      const p=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-p,3);
+      el.textContent=String(Math.round(target*e));
+      if(p<1) requestAnimationFrame(step); else el.textContent=String(target);
+    })(t0);
+  }
+  const io=new IntersectionObserver(function(es){ es.forEach(function(en){
+    if(en.isIntersecting){ run(en.target); io.unobserve(en.target); } }); },{threshold:.6});
+  nums.forEach(function(n){ io.observe(n); });
+})();
+
+(function(){ // section progress rail — highlight the section at viewport centre
+  const rail=document.getElementById('rail'); if(!rail) return;
+  const links=Array.prototype.slice.call(rail.querySelectorAll('a')), map=new Map();
+  links.forEach(function(a){ const s=document.getElementById(a.getAttribute('href').slice(1)); if(s) map.set(s,a); });
+  const io=new IntersectionObserver(function(es){ es.forEach(function(en){
+    if(en.isIntersecting){ links.forEach(function(l){ l.classList.remove('active'); });
+      const a=map.get(en.target); if(a) a.classList.add('active'); } }); },
+    {rootMargin:'-45% 0px -45% 0px', threshold:0});
+  map.forEach(function(a,s){ io.observe(s); });
 })();
 </script>
 </body>
